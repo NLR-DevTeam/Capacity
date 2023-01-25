@@ -1,4 +1,5 @@
 # 默认忽略的文件
 /out/
+/target/
 /mcsm_set.properties
 /server.properties
