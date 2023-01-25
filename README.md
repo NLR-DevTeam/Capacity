@@ -22,7 +22,7 @@ JDK 版本是否为17（开发时版本为 17.0.5）
 <a style="color: red;">注意事项：```在Linux环境下，此程序将无法获取您的内网IP地址，您需要致电您的运营商或查看您的云服务器控制台获取内网IP```</a>
 
 ### 启动
-正常情况下，在终端为同一目录，以MCSManager Beta v1.1为例，直接使用：
+正常情况下，在终端为同一目录，以 MCSManager Beta v1.1 为例，直接使用：
 ```
 java -jar MCSManager_Beta_v1.1.jar
 ```
