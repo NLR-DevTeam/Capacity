@@ -22,7 +22,7 @@ public class AccountManager {
         Scanner code = new Scanner(System.in);
         String password = code.nextLine();
 
-        returnInfo = get.LoginToArkPowered(username, password);
+        returnInfo = GetLogin.LoginToArkPowered(username, password);
 
         if (returnInfo.equals(Result)) {
             ThreadsOut.outNormal(" 登录没有成功，请检查您的用户名和密码", "WARN", "Main Thread", "Output");

@@ -11,9 +11,11 @@ public class Main {
         // 重置位置
         MainEntrance.Preposition();
 
+        // 检查文件
         FileGenerate.checkSettingFileExist();
         FileGenerate.checkMCFileExist();
 
+        // 进入主程序
         MainEntrance.MainEntrance();
     }
 }
