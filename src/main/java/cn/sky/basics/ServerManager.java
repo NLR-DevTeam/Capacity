@@ -18,10 +18,12 @@ public class ServerManager {
             String runjar_mcsm = coderun.next();
 
             List<String> commandList = new ArrayList();
-            commandList .add("java");
-            commandList .add("-jar");
-            commandList .add("server_" + runjar_mcsm + "_mcsm.jar");
+                commandList.add("java");
+                commandList.add("-jar");
+                commandList.add("server_" + runjar_mcsm + "_mcsm.jar");
+
             new ProcessBuilder(commandList).inheritIO().start();
+            askContinue.Pause();
         }else{
             System.out.println("服务器已经启动，请不要再次启动");
 
