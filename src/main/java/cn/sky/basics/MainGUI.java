@@ -5,6 +5,7 @@ import cn.sky.system.output.ThreadsOut;
 
 public class MainGUI {
     public static void GUI() {
+
         String USERINFO = "用户尚未登录";
         if (BaseManager.getLoginStatus()) {
             USERINFO = "用户名称：" + BaseManager.getUsername();
@@ -31,15 +32,17 @@ public class MainGUI {
         ThreadsOut.outNormal(" 6.列出已装配的 Mods", "INFO", "Main Thread", "Output");
         ThreadsOut.outNormal(" 7.列出已装配的插件", "INFO", "Main Thread", "Output");
         ThreadsOut.outNormal(" 8.更改服务器主要设置", "INFO", "Main Thread", "Output");
+
         Boolean userLoginStatus = BaseManager.getLoginStatus();
         if (!userLoginStatus) {
             ThreadsOut.outNormal(" 97.登录您的方块盒子账户", "INFO", "Main Thread", "Output");
         }else{
             ThreadsOut.outNormal(" 97.退出登录方块盒子账户", "INFO", "Main Thread", "Output");
         }
+
         ThreadsOut.outNormal(" 98.反馈 Bugs/提出建议", "INFO", "Main Thread", "Output");
         ThreadsOut.outNormal(" 99.退出程序", "INFO", "Main Thread", "Output");
         ThreadsOut.outNormal("==========================================", "INFO", "Main Thread", "Output");
-        ThreadsOut.outWithNoLine(" 请按照执行菜单输入命令：", "INFO", "Main Thread", "Scanner");
+        ThreadsOut.outWithNoLine(" 请输入命令序号：", "INFO", "Main Thread", "Scanner");
     }
 }
