@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Maven__com_alibaba_fastjson2_fastjson2_2_0_23">
+    <output-path>$USER_HOME$/Desktop/MCSM/out/artifacts/Maven__com_alibaba_fastjson2_fastjson2_2_0_23</output-path>
+    <root id="archive" name="Maven__com_alibaba_fastjson2_fastjson2_2_0_23.jar">
+      <element id="library" level="project" name="Maven: com.alibaba.fastjson2:fastjson2:2.0.23" />
+      <element id="module-output" name="MineCraftServerManager" />
+    </root>
+  </artifact>
+</component>

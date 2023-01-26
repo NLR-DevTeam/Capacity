@@ -3,6 +3,7 @@
     <output-path>$PROJECT_DIR$/out</output-path>
     <root id="archive" name="MineCraftServerManager.jar">
       <element id="module-output" name="MineCraftServerManager" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/alibaba/fastjson2/fastjson2/2.0.23/fastjson2-2.0.23.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>
