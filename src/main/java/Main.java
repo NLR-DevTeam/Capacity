@@ -1,8 +1,8 @@
 // 这里是程序入口
 // Now Using Java JDK 17.0.5
 
-import cn.sky.system.Initialization;
-import cn.sky.system.MainEntrance;
+import cn.sky.mcsm.system.Initialization;
+import cn.sky.mcsm.system.MainEntrance;
 
 import java.io.IOException;
 
