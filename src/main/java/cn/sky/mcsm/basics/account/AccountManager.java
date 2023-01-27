@@ -14,21 +14,24 @@ import com.alibaba.fastjson2.JSONObject;
 
 public class AccountManager {
     public static void Login() throws IOException {
+        // 初始化
         String returnAuthInfo;
         String returnInfo;
         String Token;
 
+        // 输入用户名
         ThreadsOut.outWithNoLine(" 请输入方块盒子用户名：", "INFO", "Main Thread", "Scanner");
         Scanner codeload = new Scanner(System.in);
         String username = codeload.nextLine();
 
+        // 输入密码
         ThreadsOut.outWithNoLine(" 请输入方块盒子密码：", "INFO", "Main Thread", "Scanner");
         Scanner code = new Scanner(System.in);
         String password = code.nextLine();
 
-        returnAuthInfo = Fetcher.fetch("https://auth.arkpowered.cn");
-        JSONObject jsonObj = JSON.parseObject(returnAuthInfo);
-        String AuthResult = jsonObj.getString("Status");
+        returnAuthInfo = Fetcher.fetch("https://auth.arkpowered.cn"); // 获取Auth服务器状态（String）
+        JSONObject jsonObj = JSON.parseObject(returnAuthInfo); // 创建 JSON Object
+        String AuthResult = jsonObj.getString("Status"); // 读取 Status 到 String AuthResult
 
         if(AuthResult.equals("NO")) {
             ThreadsOut.outNormal(" 登录没有成功，身份验证服务器正在停机维护", "WARN", "Main Thread", "Output");

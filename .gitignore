@@ -1,5 +1,16 @@
 # 默认忽略的文件
 /out/
 /target/
+/world/
+/logs/
+
 /mcsm_set.properties
 /server.properties
+/banned-ips.json
+/banned-players.json
+/eula.txt
+/usercache.json
+/whitelist.json
+
+# 用于测试的版本文件
+/server_1.8.9_original_mcsm.jar
