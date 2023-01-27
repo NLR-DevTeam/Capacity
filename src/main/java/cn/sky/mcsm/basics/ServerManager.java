@@ -27,14 +27,11 @@ public class ServerManager {
 
             try {
                 Process MCProcess = new ProcessBuilder(commandList).inheritIO().start();
-                Thread MCServerThread = new Thread(new In(MCProcess.getInputStream()));
-                MCServerThread.start();
-                Thread.sleep(2000);
 
-                OutputStream writeto = MCProcess.getOutputStream();
+                OutputStream OutputMCProcess = MCProcess.getOutputStream();
 
-                writeto.flush();
-                writeto.close();
+                OutputMCProcess.flush();
+                OutputMCProcess.close();
 
                 MCProcess.waitFor();
 
