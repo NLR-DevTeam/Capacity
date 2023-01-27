@@ -3,8 +3,8 @@ package cn.sky.mcsm.system;
 import java.util.Date;
 
 public class BaseManager {
-    public static final int VERSION = 5;
-    public static final String VERSION_STR = "Beta v1.2";
+    public static final int VERSION = 6;
+    public static final String VERSION_STR = "Beta v1.3";
     public static final Date DATE = new Date();
     public static boolean SERVER_RUN_STATUS = false;
 
