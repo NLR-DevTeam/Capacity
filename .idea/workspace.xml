@@ -9,39 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60575906-0d41-4c01-8cf5-db193846a63e" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/MCServerManager.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/lib/data.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/lib/io.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/lib/net.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/lib/random.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/Basics/Account/Ark.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/Basics/Download/DownloadRequire.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/Basics/Download/Node/MohistServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/Basics/Download/Node/VanillaServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/Basics/MCProperties/Set.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/Basics/MCProperties/SetProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/Basics/NormalControl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/Basics/ProcessControl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/Basics/ProcessFunctionLibrary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/System/Ask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/System/FileExist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/System/GUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/System/Initialization.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/System/MainThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/System/ThreadsOut.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/System/VariableLibrary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/lib/RewriteMCProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/lib/ServerManager.java" afterDir="false" />
+    <list default="true" id="60575906-0d41-4c01-8cf5-db193846a63e" name="变更" comment="全新版本全部重写！ Beta v2.0欢迎使用（SNAPSHOT）">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +57,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
+    "project.structure.last.edited": "工件",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.24022989",
     "settings.editor.selected.configurable": "editor.preferences.fonts.default",
@@ -125,8 +95,16 @@
       <workItem from="1675126124921" duration="61000" />
       <workItem from="1675126193009" duration="14000" />
       <workItem from="1675126213118" duration="5079000" />
-      <workItem from="1675154321742" duration="11071000" />
+      <workItem from="1675154321742" duration="11619000" />
     </task>
+    <task id="LOCAL-00001" summary="全新版本全部重写！ Beta v2.0欢迎使用（SNAPSHOT）">
+      <created>1675165974408</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1675165974408</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +120,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="全新版本全部重写！ Beta v2.0欢迎使用（SNAPSHOT）" />
+    <option name="LAST_COMMIT_MESSAGE" value="全新版本全部重写！ Beta v2.0欢迎使用（SNAPSHOT）" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
