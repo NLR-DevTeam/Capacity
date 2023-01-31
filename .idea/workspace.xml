@@ -9,9 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60575906-0d41-4c01-8cf5-db193846a63e" name="变更" comment="全新版本全部重写！ Beta v2.0欢迎使用（SNAPSHOT）">
+    <list default="true" id="60575906-0d41-4c01-8cf5-db193846a63e" name="变更" comment="修正 pom.xml">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +51,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/IDEA Project/MCServerManager/src/main/java/cn/sky/mcsm/Basics",
+    "last_opened_file_path": "D:/IDEA Project/MCServerManager/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -67,6 +67,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IDEA Project\MCServerManager\src\main\resources" />
       <recent name="D:\IDEA Project\MCServerManager\src\main\java\cn\sky\mcsm\Basics" />
     </key>
   </component>
@@ -95,7 +96,7 @@
       <workItem from="1675126124921" duration="61000" />
       <workItem from="1675126193009" duration="14000" />
       <workItem from="1675126213118" duration="5079000" />
-      <workItem from="1675154321742" duration="11619000" />
+      <workItem from="1675154321742" duration="11847000" />
     </task>
     <task id="LOCAL-00001" summary="全新版本全部重写！ Beta v2.0欢迎使用（SNAPSHOT）">
       <created>1675165974408</created>
@@ -104,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675165974408</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="修正 pom.xml">
+      <created>1675166463524</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675166463524</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,7 +131,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="全新版本全部重写！ Beta v2.0欢迎使用（SNAPSHOT）" />
-    <option name="LAST_COMMIT_MESSAGE" value="全新版本全部重写！ Beta v2.0欢迎使用（SNAPSHOT）" />
+    <MESSAGE value="修正" />
+    <MESSAGE value="修正 pom.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="修正 pom.xml" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
