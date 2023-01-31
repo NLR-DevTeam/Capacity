@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MCServerManager">
+    <output-path>$PROJECT_DIR$/out/artifacts/MCServerManager</output-path>
+    <root id="archive" name="MCServerManager.jar">
+      <element id="module-output" name="MCServerManager" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/alibaba/fastjson2/fastjson2/2.0.23/fastjson2-2.0.23.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jline/jline/3.22.0/jline-3.22.0.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
