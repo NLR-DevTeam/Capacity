@@ -49,6 +49,7 @@ public class MainThread {
                 break;
             case "98":
                 ThreadsOut.INFO.Output("\n 反馈请前往Issue（反馈任何问题，也许最快）：https://github.com/CarlSkyCoding/ArkPowered\n 或方块盒子反馈工具：https://id.arkpowered.cn/panel/support\n 或发送邮箱到：skygod@arkpowered.cn\n 或加群：705439821\n");
+                Ask.Continue();
                 MainThread.Run();
                 break;
             case "99":
