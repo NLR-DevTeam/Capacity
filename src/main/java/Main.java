@@ -1,5 +1,5 @@
-import asia.carlsky.nlr.mcsm.System.Initialization;
-import asia.carlsky.nlr.mcsm.System.MainThread;
+import cn.carlsky.nlr.mcsm.System.Initialization;
+import cn.carlsky.nlr.mcsm.System.MainThread;
 
 import java.io.IOException;
 

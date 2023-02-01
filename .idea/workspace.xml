@@ -9,9 +9,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60575906-0d41-4c01-8cf5-db193846a63e" name="变更" comment="修正 pom.xml">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+    <list default="true" id="60575906-0d41-4c01-8cf5-db193846a63e" name="变更" comment="修正 MANIFEST.MF">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/lib/data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/carlsky/nlr/lib/data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/lib/io.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/carlsky/nlr/lib/io.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/lib/net.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/carlsky/nlr/lib/net.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/lib/random.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/carlsky/nlr/lib/random.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/Basics/Account/Ark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/carlsky/nlr/mcsm/Basics/Account/Ark.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/Basics/Download/DownloadRequire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/carlsky/nlr/mcsm/Basics/Download/DownloadRequire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/Basics/Download/Node/MohistServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/carlsky/nlr/mcsm/Basics/Download/Node/MohistServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/Basics/Download/Node/VanillaServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/carlsky/nlr/mcsm/Basics/Download/Node/VanillaServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/Basics/MCProperties/Set.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/carlsky/nlr/mcsm/Basics/MCProperties/Set.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/Basics/MCProperties/SetProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/carlsky/nlr/mcsm/Basics/MCProperties/SetProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/Basics/NormalControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/carlsky/nlr/mcsm/Basics/NormalControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/Basics/ProcessControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/carlsky/nlr/mcsm/Basics/ProcessControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/Basics/ProcessFunctionLibrary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/carlsky/nlr/mcsm/Basics/ProcessFunctionLibrary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/System/Ask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/carlsky/nlr/mcsm/System/Ask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/System/FileExist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/carlsky/nlr/mcsm/System/FileExist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/System/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/carlsky/nlr/mcsm/System/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/System/Initialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/carlsky/nlr/mcsm/System/Initialization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/System/MainThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/carlsky/nlr/mcsm/System/MainThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/System/ThreadsOut.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/carlsky/nlr/mcsm/System/ThreadsOut.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/System/VariableLibrary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/carlsky/nlr/mcsm/System/VariableLibrary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/lib/RewriteMCProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/carlsky/nlr/mcsm/lib/RewriteMCProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/asia/carlsky/nlr/mcsm/lib/ServerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/carlsky/nlr/mcsm/lib/ServerManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,27 +67,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/IDEA Project/MCServerManager/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "工件",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.24022989",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
-    "settings.editor.splitter.proportion": "0.15573123",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/IDEA Project/MCServerManager/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;工件&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.24022989&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
+    &quot;settings.editor.splitter.proportion&quot;: &quot;0.15573123&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\IDEA Project\MCServerManager\src\main\resources" />
@@ -97,6 +120,9 @@
       <workItem from="1675126193009" duration="14000" />
       <workItem from="1675126213118" duration="5079000" />
       <workItem from="1675154321742" duration="11847000" />
+      <workItem from="1675166774667" duration="46000" />
+      <workItem from="1675173238102" duration="1436000" />
+      <workItem from="1675176211663" duration="455000" />
     </task>
     <task id="LOCAL-00001" summary="全新版本全部重写！ Beta v2.0欢迎使用（SNAPSHOT）">
       <created>1675165974408</created>
@@ -112,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675166463524</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="修正 MANIFEST.MF">
+      <created>1675166787972</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1675166787972</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,7 +166,8 @@
     <MESSAGE value="全新版本全部重写！ Beta v2.0欢迎使用（SNAPSHOT）" />
     <MESSAGE value="修正" />
     <MESSAGE value="修正 pom.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="修正 pom.xml" />
+    <MESSAGE value="修正 MANIFEST.MF" />
+    <option name="LAST_COMMIT_MESSAGE" value="修正 MANIFEST.MF" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
