@@ -54,6 +54,7 @@ public class MainThread {
                     System.out.println("Value = " + value);
                 }
                 Ask.Continue();
+                Run();
                 break;
             case "97":
                 if(VariableLibrary.Storage.UserLoginStatus.equals(true)){
