@@ -15,6 +15,12 @@ public class NormalControl {
     public static void AgreeEULA() throws IOException {
         ThreadLogger.NoLine.INFO.Scanner("您想写哪个文件夹下的EULA（例如Server/1.8.9/目录下的就输入Server/1.8.9，当前目录则留空）：");
         String dir = data.Scan();
+        File DIR_FOLDER = new File(dir);
+
+        if(!DIR_FOLDER.exists()){
+            DIR_FOLDER.mkdirs();
+        }
+
         if(dir.isEmpty()) {
             io.FileWriter("eula.txt", "eula=true");
         } else {
