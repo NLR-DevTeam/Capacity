@@ -9,10 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60575906-0d41-4c01-8cf5-db193846a63e" name="变更" comment="紧急修复我的智障代码 2">
+    <list default="true" id="60575906-0d41-4c01-8cf5-db193846a63e" name="变更" comment="Random System Updated in v2 00005">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/carlsky/nlr/lib/data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/carlsky/nlr/lib/data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/carlsky/nlr/mcsm/System/MainThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/carlsky/nlr/mcsm/System/MainThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +105,7 @@
       <workItem from="1675256792229" duration="116000" />
       <workItem from="1675417839224" duration="372000" />
       <workItem from="1675494193307" duration="664000" />
-      <workItem from="1675510831870" duration="8724000" />
+      <workItem from="1675510831870" duration="9260000" />
     </task>
     <task id="LOCAL-00001" summary="全新版本全部重写！ Beta v2.0欢迎使用（SNAPSHOT）">
       <created>1675165974408</created>
@@ -171,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675520761419</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Random System Updated in v2 00005">
+      <created>1675521739511</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1675521739511</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,7 +204,8 @@
     <MESSAGE value="Update Beta 2.1 SNAPSHOT" />
     <MESSAGE value="紧急修复我的智障代码" />
     <MESSAGE value="紧急修复我的智障代码 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="紧急修复我的智障代码 2" />
+    <MESSAGE value="Random System Updated in v2 00005" />
+    <option name="LAST_COMMIT_MESSAGE" value="Random System Updated in v2 00005" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -38,6 +38,7 @@ build/
 .DS_Store
 
 ### Out ###
+/.idea/
 /Server/
 /world/
 /logs/
