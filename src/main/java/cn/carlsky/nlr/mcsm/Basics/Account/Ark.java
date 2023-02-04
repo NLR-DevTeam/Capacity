@@ -1,6 +1,7 @@
 package cn.carlsky.nlr.mcsm.Basics.Account;
 
 import cn.carlsky.nlr.mcsm.System.Ask;
+import cn.carlsky.nlr.mcsm.System.MainThread;
 import cn.carlsky.nlr.mcsm.System.ThreadLogger;
 import cn.carlsky.nlr.lib.data;
 import cn.carlsky.nlr.lib.net;
@@ -51,6 +52,7 @@ public class Ark {
             }
         }
         Ask.Continue();
+        MainThread.Run();
     }
 
     public static String GetUserStatusFromServer(String Username, String Password) {
