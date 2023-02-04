@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class Ask {
     public static void Exit() throws IOException {
-        ThreadLogger.NoLine.INFO.Scanner(" 您是否要退出此程序？(Y/N，输入其他为不退出)");
+        ThreadLogger.NoLine.INFO.Scanner(" 您是否要退出此程序？(Y/N，输入其他为不退出)：");
         String CODE = data.Scan();
         switch (CODE) {
             case "Y":

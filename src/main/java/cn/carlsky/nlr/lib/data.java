@@ -17,7 +17,7 @@ public class data {
         public static int RandomOnlyID() {
             Random RandomBuilder = new Random();
 
-            int only_id = RandomBuilder.nextInt(99999999);
+            int only_id = RandomBuilder.nextInt(9999);
 
             return only_id;
         }
