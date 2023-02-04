@@ -1,6 +1,6 @@
 package cn.carlsky.nlr.mcsm.lib;
 
-import cn.carlsky.nlr.mcsm.System.ThreadsOut;
+import cn.carlsky.nlr.mcsm.System.ThreadLogger;
 
 import java.io.*;
 import java.util.Properties;
@@ -14,8 +14,8 @@ public class RewriteMCProperties {
             props.setProperty(Key, Value);
             try(BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("server.properties"))){
                 props.store(bos, "MCSM Properties");
-                ThreadsOut.INFO.Output("\n 修改MC配置文件成功");
-                ThreadsOut.INFO.Output(" Successful to rewrite Minecraft properties at the same folders.");
+                ThreadLogger.INFO.Output("\n 修改MC配置文件成功");
+                ThreadLogger.INFO.Output(" Successful to rewrite Minecraft properties at the same folders.");
             }
         } catch (Exception e) {
             e.printStackTrace();

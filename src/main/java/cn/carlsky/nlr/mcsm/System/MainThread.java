@@ -7,6 +7,7 @@ import cn.carlsky.nlr.mcsm.Basics.MCProperties.SetProperties;
 import cn.carlsky.nlr.mcsm.Basics.NormalControl;
 import cn.carlsky.nlr.mcsm.Basics.ProcessControl;
 import cn.carlsky.nlr.mcsm.Basics.ProcessFunctionLibrary;
+import com.sun.tools.javac.Main;
 
 import java.io.IOException;
 
@@ -27,18 +28,32 @@ public class MainThread {
                 break;
             case "3":
                 DownloadRequire.DownloadMCServerVersion();
+                MainThread.Run();
                 break;
             case "4":
                 NormalControl.CheckIP();
+                MainThread.Run();
                 break;
             case "5":
                 NormalControl.CheckDirFiles.listDirFiles("mods");
+                MainThread.Run();
                 break;
             case "6":
                 NormalControl.CheckDirFiles.listDirFiles("plugins");
+                MainThread.Run();
                 break;
             case "7":
                 SetProperties.Guider();
+                MainThread.Run();
+                break;
+            case "8":
+                for (String key : VariableLibrary.Storage.HashMapServerProcess.keySet()) {
+                    System.out.println("Key = " + key);
+                }
+                for (Process value : VariableLibrary.Storage.HashMapServerProcess.values()) {
+                    System.out.println("Value = " + value);
+                }
+                Ask.Continue();
                 break;
             case "97":
                 if(VariableLibrary.Storage.UserLoginStatus.equals(true)){
@@ -48,7 +63,7 @@ public class MainThread {
                 }
                 break;
             case "98":
-                ThreadsOut.INFO.Output("\n 反馈请前往Issue（反馈任何问题，也许最快）：https://github.com/CarlSkyCoding/ArkPowered\n 或方块盒子反馈工具：https://id.arkpowered.cn/panel/support\n 或发送邮箱到：skygod@arkpowered.cn\n 或加群：705439821\n");
+                ThreadLogger.INFO.Output("\n 反馈请前往Issue（反馈任何问题，也许最快）：https://github.com/CarlSkyCoding/ArkPowered\n 或方块盒子反馈工具：https://id.arkpowered.cn/panel/support\n 或发送邮箱到：skygod@arkpowered.cn\n 或加群：705439821\n");
                 Ask.Continue();
                 MainThread.Run();
                 break;
@@ -73,19 +88,49 @@ public class MainThread {
                 RunServerPart();
                 break;
             case "2":
-                ThreadsOut.INFO.Output("\n 现版本暂不支持删除实例功能，想停止实例，请关闭此程序后重新开启 \n");
+                ProcessControl.DestroyServer();
                 break;
             case "3":
-                ProcessControl.RunOutput();
+                ProcessControl.ReadThreadOutputStream();
                 break;
             case "4":
                 ProcessControl.RunCommandInThread();
+                Ask.Continue();
+                RunServerPart();
+                break;
+            case "5":
+                ProcessControl.StopServer();
                 break;
             case "99":
                 Run();
                 break;
             default:
                 MainThread.RunServerPart();
+                break;
+        }
+    }
+
+    public static void DeveloperPart() throws IOException {
+
+        GUI.DeveloperGUI();
+
+        String CODE = data.Scan();
+
+        switch (CODE) {
+            case "1":
+                for (String key : VariableLibrary.Storage.HashMapServerProcess.keySet()) {
+                    System.out.println("Key = " + key);
+                }
+                for (Process value : VariableLibrary.Storage.HashMapServerProcess.values()) {
+                    System.out.println("Value = " + value);
+                }
+                Ask.Continue();
+                break;
+            case "99":
+                MainThread.Run();
+                break;
+            default:
+                MainThread.DeveloperPart();
                 break;
         }
     }

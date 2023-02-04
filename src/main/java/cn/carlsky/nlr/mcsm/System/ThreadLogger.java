@@ -3,7 +3,7 @@ package cn.carlsky.nlr.mcsm.System;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class ThreadsOut {
+public class ThreadLogger {
     public class INFO {
         public static void Output(String TEXT) {
             SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");

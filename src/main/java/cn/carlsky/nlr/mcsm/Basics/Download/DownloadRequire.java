@@ -5,6 +5,7 @@ package cn.carlsky.nlr.mcsm.Basics.Download;
 import cn.carlsky.nlr.mcsm.Basics.Download.Node.VanillaServer;
 import cn.carlsky.nlr.mcsm.System.GUI;
 import cn.carlsky.nlr.mcsm.Basics.Download.Node.MohistServer;
+import cn.carlsky.nlr.mcsm.System.MainThread;
 
 import java.io.IOException;
 import java.util.Scanner;

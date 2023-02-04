@@ -1,7 +1,7 @@
 package cn.carlsky.nlr.mcsm.Basics.MCProperties;
 
 import cn.carlsky.nlr.mcsm.System.Ask;
-import cn.carlsky.nlr.mcsm.System.ThreadsOut;
+import cn.carlsky.nlr.mcsm.System.ThreadLogger;
 import cn.carlsky.nlr.lib.data;
 import cn.carlsky.nlr.mcsm.lib.RewriteMCProperties;
 
@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class Set {
     public static void SetFly() throws IOException {
-        ThreadsOut.NoLine.INFO.Scanner(" 请输入是否允许飞行（true/false）：");
+        ThreadLogger.NoLine.INFO.Scanner(" 请输入是否允许飞行（true/false）：");
 
         String code = data.Scan();
 
@@ -22,7 +22,7 @@ public class Set {
     }
 
     public static void SetDifficulty() throws IOException {
-        ThreadsOut.NoLine.INFO.Scanner(" 请输入难度等级：");
+        ThreadLogger.NoLine.INFO.Scanner(" 请输入难度等级：");
 
         String code = data.Scan();
 
@@ -35,7 +35,7 @@ public class Set {
     }
 
     public static void SetMaxMapHeight() throws IOException {
-        ThreadsOut.NoLine.INFO.Scanner(" 请输入最大高度：");
+        ThreadLogger.NoLine.INFO.Scanner(" 请输入最大高度：");
 
         String code = data.Scan();
 
@@ -48,7 +48,7 @@ public class Set {
     }
 
     public static void SetMaxPlayers() throws IOException {
-        ThreadsOut.NoLine.INFO.Scanner(" 请输入最大人数：");
+        ThreadLogger.NoLine.INFO.Scanner(" 请输入最大人数：");
 
         String code = data.Scan();
 
@@ -61,7 +61,7 @@ public class Set {
     }
 
     public static void SetMOTD() throws IOException {
-        ThreadsOut.NoLine.INFO.Scanner(" 请输入MOTD信息：");
+        ThreadLogger.NoLine.INFO.Scanner(" 请输入MOTD信息：");
 
         String code = data.Scan();
 
@@ -74,7 +74,7 @@ public class Set {
     }
 
     public static void SetOnlineMode() throws IOException {
-        ThreadsOut.NoLine.INFO.Scanner(" 请输入是否开启正版验证（true/false）：");
+        ThreadLogger.NoLine.INFO.Scanner(" 请输入是否开启正版验证（true/false）：");
 
         String code = data.Scan();
 
@@ -87,7 +87,7 @@ public class Set {
     }
 
     public static void SetPort() throws IOException {
-        ThreadsOut.NoLine.INFO.Scanner(" 请输入端口：");
+        ThreadLogger.NoLine.INFO.Scanner(" 请输入端口：");
 
         String code = data.Scan();
 
@@ -100,7 +100,7 @@ public class Set {
     }
 
     public static void SetPVP() throws IOException {
-        ThreadsOut.NoLine.INFO.Scanner(" 请输入PVP状态（true/false）：");
+        ThreadLogger.NoLine.INFO.Scanner(" 请输入PVP状态（true/false）：");
 
         String code = data.Scan();
 
@@ -113,7 +113,7 @@ public class Set {
     }
 
     public static void SetSeed() throws IOException {
-        ThreadsOut.NoLine.INFO.Scanner(" 请输入种子：");
+        ThreadLogger.NoLine.INFO.Scanner(" 请输入种子：");
 
         String code = data.Scan();
 
@@ -126,7 +126,7 @@ public class Set {
     }
 
     public static void SetWhiteList() throws IOException {
-        ThreadsOut.NoLine.INFO.Scanner(" 请输入是否白名单（true/false）：");
+        ThreadLogger.NoLine.INFO.Scanner(" 请输入是否白名单（true/false）：");
 
         String code = data.Scan();
 

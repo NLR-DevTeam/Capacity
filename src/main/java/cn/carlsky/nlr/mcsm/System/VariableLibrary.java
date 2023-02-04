@@ -2,6 +2,7 @@ package cn.carlsky.nlr.mcsm.System;
 
 import com.alibaba.fastjson2.JSONObject;
 
+import java.io.BufferedWriter;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -17,6 +18,7 @@ public class VariableLibrary {
         public static String UserLoginToken = new String();
         public static HashMap<String, JSONObject> HashMapServerJSONObject = new HashMap<String, JSONObject>();
         public static HashMap<String, String> HashMapServerOutput = new HashMap<String, String>();
-        public static HashMap HashMapServerProcess = new HashMap();
+        public static HashMap<String, Process> HashMapServerProcess = new HashMap<String, Process>();
+//        public static HashMap<String, String> HashMapServerBufferedWriterString = new HashMap<String, String>();
     }
 }

@@ -1,8 +1,9 @@
 package cn.carlsky.nlr.mcsm.Basics;
 
+import cn.carlsky.nlr.lib.data;
 import cn.carlsky.nlr.mcsm.System.Ask;
 import cn.carlsky.nlr.mcsm.System.MainThread;
-import cn.carlsky.nlr.mcsm.System.ThreadsOut;
+import cn.carlsky.nlr.mcsm.System.ThreadLogger;
 import cn.carlsky.nlr.lib.io;
 import cn.carlsky.nlr.lib.net;
 
@@ -12,7 +13,13 @@ import java.net.InetAddress;
 
 public class NormalControl {
     public static void AgreeEULA() throws IOException {
-        io.FileWriter("eula.txt", "eula=true");
+        ThreadLogger.NoLine.INFO.Scanner("您想写哪个文件夹下的EULA（例如Server/1.8.9/目录下的就输入Server/1.8.9，当前目录则留空）：");
+        String dir = data.Scan();
+        if(dir.isEmpty()) {
+            io.FileWriter("eula.txt", "eula=true");
+        } else {
+            io.FileWriter(dir + "/eula.txt", "eula=true");
+        }
         MainThread.Run();
     }
 
@@ -20,10 +27,10 @@ public class NormalControl {
         InetAddress address = InetAddress.getLocalHost();
         String PublicIP = net.fetch("https://api.arkpowered.cn/library/public/network/getip");
 
-        ThreadsOut.INFO.Output("");
-        ThreadsOut.INFO.Output("本地IP：" + address.getHostAddress());
-        ThreadsOut.INFO.Output("公共IP：" + PublicIP);
-        ThreadsOut.INFO.Output("");
+        ThreadLogger.INFO.Output("");
+        ThreadLogger.INFO.Output("本地IP：" + address.getHostAddress());
+        ThreadLogger.INFO.Output("公共IP：" + PublicIP);
+        ThreadLogger.INFO.Output("");
 
         Ask.Continue();
     }

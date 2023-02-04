@@ -14,27 +14,27 @@ public class FileExist {
         if(!MCServerManagerRoot.exists()){
             Boolean Success = MCServerManagerRoot.mkdirs();
             if (Success) {
-                ThreadsOut.INFO.Checker(" 创建基础目录成功！");
+                ThreadLogger.INFO.Checker(" 创建基础目录成功！");
             } else {
-                ThreadsOut.WARN.Checker(" 创建基础目录失败！");
+                ThreadLogger.WARN.Checker(" 创建基础目录失败！");
             }
         }
 
         if(!MCServerRunContainerRoot.exists()){
             Boolean Success = MCServerRunContainerRoot.mkdirs();
             if (Success) {
-                ThreadsOut.INFO.Checker(" 创建基础目录成功！");
+                ThreadLogger.INFO.Checker(" 创建基础目录成功！");
             } else {
-                ThreadsOut.WARN.Checker(" 创建基础目录失败！");
+                ThreadLogger.WARN.Checker(" 创建基础目录失败！");
             }
         }
 
         if(!MCServerManagerSettingRoot.exists()){
             Boolean Success = MCServerManagerSettingRoot.mkdirs();
             if (Success) {
-                ThreadsOut.INFO.Checker(" 创建基础目录成功！");
+                ThreadLogger.INFO.Checker(" 创建基础目录成功！");
             } else {
-                ThreadsOut.WARN.Checker(" 创建基础目录失败！");
+                ThreadLogger.WARN.Checker(" 创建基础目录失败！");
             }
         }
     }
@@ -44,7 +44,7 @@ public class FileExist {
             try {
                 Properties props = new Properties();
 
-                ThreadsOut.INFO.Checker("正在将默认配置写入 server.properties......");
+                ThreadLogger.INFO.Checker("正在将默认配置写入 server.properties......");
                 props.put("allow-flight", "false");
                 props.put("allow-nether", "true");
                 props.put("announce-player-achievements","true");
@@ -84,7 +84,7 @@ public class FileExist {
                 // 使用"输出流"，将Properties集合中的KV键值对，写入*.properties文件
                 try(BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("server.properties"))){
                     props.store(bos, "MCSM Properties");
-                    ThreadsOut.INFO.Checker("写入MC配置文件成功！");
+                    ThreadLogger.INFO.Checker("写入MC配置文件成功！");
                 }
 
             } catch (Exception e) {
