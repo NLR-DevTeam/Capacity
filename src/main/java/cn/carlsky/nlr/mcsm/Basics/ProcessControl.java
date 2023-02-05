@@ -102,4 +102,13 @@ public class ProcessControl {
             }
         }
     }
+
+    public static void ListAllProcess() {
+        for (String key : VariableLibrary.Storage.HashMapServerProcess.keySet()) {
+            System.out.println("Key = " + key);
+        }
+        for (Process value : VariableLibrary.Storage.HashMapServerProcess.values()) {
+            System.out.println("Value = " + value);
+        }
+    }
 }
