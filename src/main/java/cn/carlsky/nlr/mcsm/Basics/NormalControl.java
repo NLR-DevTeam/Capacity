@@ -12,6 +12,27 @@ import java.io.IOException;
 import java.net.InetAddress;
 
 public class NormalControl {
+    public static void SearchMods() throws IOException {
+        ThreadLogger.NoLine.INFO.Scanner("您想浏览哪个文件夹mods（例如 Server/ 目录下的就输入Server，当前目录则留空）：");
+        String dir = data.Scan();
+
+        if(dir.isEmpty()) {
+            NormalControl.CheckDirFiles.listDirFiles("mods");
+        } else {
+            NormalControl.CheckDirFiles.listDirFiles(dir + "/mods");
+        }
+    }
+    public static void SearchPlugins() throws IOException {
+        ThreadLogger.NoLine.INFO.Scanner("您想浏览哪个文件夹plugins（例如 Server/ 目录下的就输入Server，当前目录则留空）：");
+        String dir = data.Scan();
+
+        if(dir.isEmpty()) {
+            NormalControl.CheckDirFiles.listDirFiles("plugins");
+            System.out.println("e");
+        } else {
+            NormalControl.CheckDirFiles.listDirFiles(dir + "/plugins");
+        }
+    }
     public static void AgreeEULA() throws IOException {
         ThreadLogger.NoLine.INFO.Scanner("您想写哪个文件夹下的EULA（例如Server/1.8.9/目录下的就输入Server/1.8.9，当前目录则留空）：");
         String dir = data.Scan();

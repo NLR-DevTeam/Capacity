@@ -12,6 +12,9 @@ import com.sun.tools.javac.Main;
 import java.io.IOException;
 
 public class MainThread {
+
+    private static String dir;
+
     public static void Run() throws IOException {
         // 主菜单
 
@@ -35,11 +38,11 @@ public class MainThread {
                 MainThread.Run();
                 break;
             case "5":
-                NormalControl.CheckDirFiles.listDirFiles("mods");
+                NormalControl.SearchMods();
                 MainThread.Run();
                 break;
             case "6":
-                NormalControl.CheckDirFiles.listDirFiles("plugins");
+                NormalControl.SearchPlugins();
                 MainThread.Run();
                 break;
             case "7":
@@ -47,12 +50,7 @@ public class MainThread {
                 MainThread.Run();
                 break;
             case "8":
-                for (String key : VariableLibrary.Storage.HashMapServerProcess.keySet()) {
-                    System.out.println("Key = " + key);
-                }
-                for (Process value : VariableLibrary.Storage.HashMapServerProcess.values()) {
-                    System.out.println("Value = " + value);
-                }
+                DeveloperPart();
                 Ask.Continue();
                 Run();
                 break;

@@ -12,18 +12,17 @@ import java.util.List;
 
 
 public class ProcessFunctionLibrary extends java.lang.Thread {
-    public static String runjar_mcsm;
     public static Process MCProcess;
     public static String Only_ID;
     public static void CreateNewMCThread() throws IOException {
         ThreadLogger.NoLine.INFO.Scanner("请输入服务器名称：");
         String SERVER_NAME = data.Scan();
 
+        ThreadLogger.NoLine.INFO.Scanner("您想运行哪个文件夹下的服务端（例如 Server/1.8.9 目录下的就输入Server/1.8.9，当前目录则留空）：");
+        String dir = data.Scan();
+
         ThreadLogger.NoLine.INFO.Scanner("请输入JAR服务端名称：");
         String runjar_mcsm = data.Scan();
-
-        ThreadLogger.NoLine.INFO.Scanner("您想运行哪个文件夹下的服务端（例如Server/1.8.9/目录下的就输入Server/1.8.9，当前目录则留空）：");
-        String dir = data.Scan();
 
         List<String> commandList = new ArrayList();
             commandList.add("java");

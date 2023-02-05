@@ -14,6 +14,7 @@ public class GUI {
             LOGINSTATUS = "未登录";
         }
 
+        ThreadLogger.INFO.Output("");
         ThreadLogger.INFO.Output("============================= MCSManager ==============================");
         ThreadLogger.INFO.Output(" MCServerManager " + VariableLibrary.System.VERSION_STR);
         ThreadLogger.INFO.Output(" Github 开源地址：https://github.com/NLR-DevTeam/MinecraftServerManager");
@@ -47,6 +48,7 @@ public class GUI {
     }
 
     public static void ServerListGUI() {
+        ThreadLogger.INFO.Output("");
         ThreadLogger.INFO.Output("============================== 服务端实例 ==============================");
 
         // 遍历 HashMap
@@ -81,6 +83,7 @@ public class GUI {
         }
         // 遍历 HashMap 结束
 
+        ThreadLogger.INFO.Output("");
         ThreadLogger.INFO.Output("=============================== 管理菜单 ===============================");
         ThreadLogger.INFO.Output(" 1.创建新服务器实例");
         ThreadLogger.INFO.Output(" 2.删除服务器实例（同时会强制结束服务器进程）");
@@ -93,7 +96,7 @@ public class GUI {
     }
 
     public static void Download() {
-        System.out.println("");
+        ThreadLogger.INFO.Output("");
         ThreadLogger.INFO.Output("=============================== 下载菜单 ===============================");
         ThreadLogger.INFO.Output(" 1.原版服务端");
         ThreadLogger.INFO.Output(" 2.MohistMC");
@@ -103,6 +106,7 @@ public class GUI {
     }
 
     public static void SetProperties() {
+        ThreadLogger.INFO.Output("");
         ThreadLogger.INFO.Output("=============================== 管理菜单 ===============================");
         ThreadLogger.INFO.Output(" 1.设置种子");
         ThreadLogger.INFO.Output(" 2.设置端口");
@@ -120,6 +124,7 @@ public class GUI {
     }
 
     public static void DeveloperGUI() {
+        ThreadLogger.INFO.Output("");
         ThreadLogger.INFO.Output("============================== 开发者菜单 ===============================");
         ThreadLogger.INFO.Output("1.列出Only_ID和Process PID/exited");
         ThreadLogger.INFO.Output("99.回到主菜单");
