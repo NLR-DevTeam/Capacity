@@ -26,4 +26,8 @@ JDK 版本是否为17（开发时版本为 17.0.5）
 ```
 java -jar MCSManager_Beta_v1.1.jar
 ```
+作者脑子有坑的情况下（MANIFEST文件故障），在终端为同一目录，以 MCSManager Beta v1.1 为例，直接使用：
+```
+java -cp MCSManager_Beta_v1.1.jar Main
+```
 即可运行。在程序启动后，会自动为您创建配置文件（如果根目录没有配置文件的话）
