@@ -24,6 +24,7 @@ public class FileExist {
             Boolean Success = MCServerRunContainerRoot.mkdirs();
             if (Success) {
                 ThreadLogger.INFO.Checker(" 创建基础目录成功！");
+                ThreadLogger.INFO.Checker(" 我们仍然强烈建议您把服务端文件夹放在 MCServerManager/Server container/ 中");
             } else {
                 ThreadLogger.WARN.Checker(" 创建基础目录失败！");
             }

@@ -4,6 +4,16 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ThreadLogger {
+    public class use {
+        public static class OutLine {
+            public static void NoHead() {
+                System.out.println("");
+            }
+            public static void WithHead() {
+                INFO.Output("");
+            }
+        }
+    }
     public class INFO {
         public static void Output(String TEXT) {
             SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");

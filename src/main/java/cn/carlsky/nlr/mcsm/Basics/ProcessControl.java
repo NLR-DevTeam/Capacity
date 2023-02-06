@@ -16,8 +16,9 @@ public class ProcessControl {
         ThreadLogger.INFO.Output("");
         ThreadLogger.INFO.Output("");
         ThreadLogger.INFO.Output("=============================== 输出页面 ===============================");
+        ThreadLogger.use.OutLine.NoHead();
         System.out.println(VariableLibrary.Storage.HashMapServerOutput.get(ONLY_ID));
-        System.out.println("");
+        ThreadLogger.use.OutLine.NoHead();
         ThreadLogger.INFO.Output("============================= 输出页面结束 ==============================");
         ThreadLogger.INFO.Output("");
         ThreadLogger.INFO.Output("");

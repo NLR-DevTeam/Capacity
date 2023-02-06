@@ -52,7 +52,7 @@ public class ProcessFunctionLibrary extends java.lang.Thread {
         NewServerJSON.put("ServerJarName", runjar_mcsm);
         NewServerJSON.put("CreateTime", data.Time.getDate());
         VariableLibrary.Storage.HashMapServerJSONObject.put(Only_ID, NewServerJSON);
-        VariableLibrary.Storage.HashMapServerOutput.put(Only_ID, "");
+        VariableLibrary.Storage.HashMapServerOutput.put(Only_ID, "我的世界服务器 输出记录仪记录中...\nMinecraft Server Output Recording...\n");
         VariableLibrary.Storage.HashMapServerProcess.put(Only_ID, MCProcess);
 
         MainThread.RunServerPart();

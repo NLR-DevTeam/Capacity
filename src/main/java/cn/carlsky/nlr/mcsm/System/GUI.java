@@ -1,5 +1,6 @@
 package cn.carlsky.nlr.mcsm.System;
 
+import cn.carlsky.nlr.lib.data;
 import com.alibaba.fastjson2.JSONObject;
 
 import java.util.Map;
@@ -8,13 +9,14 @@ public class GUI {
     public static String LOGINSTATUS;
     public static void MainGUI() {
 
+        // 判断登录状态
         if (VariableLibrary.Storage.UserLoginStatus.equals(true)) {
             LOGINSTATUS = "已登录";
         } else {
             LOGINSTATUS = "未登录";
         }
 
-        ThreadLogger.INFO.Output("");
+        ThreadLogger.use.OutLine.NoHead();
         ThreadLogger.INFO.Output("============================= MCSManager ==============================");
         ThreadLogger.INFO.Output(" MCServerManager " + VariableLibrary.System.VERSION_STR);
         ThreadLogger.INFO.Output(" Github 开源地址：https://github.com/NLR-DevTeam/MinecraftServerManager");
@@ -26,7 +28,7 @@ public class GUI {
         }
         ThreadLogger.INFO.Output("=============================== 系统信息 ===============================");
         ThreadLogger.INFO.Output(" Java 运行环境：" + System.getProperty("java.version"));
-        ThreadLogger.INFO.Output(" 当前时间：" + VariableLibrary.System.DATE);
+        ThreadLogger.INFO.Output(" 当前时间：" + data.Time.getDate());
         ThreadLogger.INFO.Output("=============================== 管理菜单 ===============================");
         ThreadLogger.INFO.Output(" 1.服务器实例管理");
         ThreadLogger.INFO.Output(" 2.同意 EULA 协议");
@@ -48,7 +50,7 @@ public class GUI {
     }
 
     public static void ServerListGUI() {
-        ThreadLogger.INFO.Output("");
+        ThreadLogger.use.OutLine.NoHead();
         ThreadLogger.INFO.Output("============================== 服务端实例 ==============================");
 
         // 遍历 HashMap
@@ -83,7 +85,6 @@ public class GUI {
         }
         // 遍历 HashMap 结束
 
-        ThreadLogger.INFO.Output("");
         ThreadLogger.INFO.Output("=============================== 管理菜单 ===============================");
         ThreadLogger.INFO.Output(" 1.创建新服务器实例");
         ThreadLogger.INFO.Output(" 2.删除服务器实例（同时会强制结束服务器进程）");
@@ -96,7 +97,7 @@ public class GUI {
     }
 
     public static void Download() {
-        ThreadLogger.INFO.Output("");
+        ThreadLogger.use.OutLine.NoHead();
         ThreadLogger.INFO.Output("=============================== 下载菜单 ===============================");
         ThreadLogger.INFO.Output(" 1.原版服务端");
         ThreadLogger.INFO.Output(" 2.MohistMC");
@@ -106,7 +107,7 @@ public class GUI {
     }
 
     public static void SetProperties() {
-        ThreadLogger.INFO.Output("");
+        ThreadLogger.use.OutLine.NoHead();
         ThreadLogger.INFO.Output("=============================== 管理菜单 ===============================");
         ThreadLogger.INFO.Output(" 1.设置种子");
         ThreadLogger.INFO.Output(" 2.设置端口");
@@ -124,7 +125,7 @@ public class GUI {
     }
 
     public static void DeveloperGUI() {
-        ThreadLogger.INFO.Output("");
+        ThreadLogger.use.OutLine.NoHead();
         ThreadLogger.INFO.Output("============================== 开发者菜单 ===============================");
         ThreadLogger.INFO.Output("1.列出Only_ID和Process PID/exited");
         ThreadLogger.INFO.Output("99.回到主菜单");

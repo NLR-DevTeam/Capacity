@@ -10,7 +10,7 @@ public class VariableLibrary {
     public class System {
         public static int VERSION = 9;
         public static String VERSION_STR = "Beta v2.2 SNAPSHOT";
-        public static final Date DATE = new Date();
+        public static final Date StartTime = new Date();
     }
     public class Storage {
         public static Boolean UserLoginStatus = false;
