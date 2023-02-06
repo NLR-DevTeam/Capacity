@@ -40,9 +40,13 @@ public class Initialization {
                 String SERVER_NAME = JSONValue.getString("ServerName");
                 String SERVER_DIR = JSONValue.getString("ServerDir");
                 String SERVER_JAR = JSONValue.getString("ServerJarName");
+                Boolean SERVER_AUTOSTART = JSONValue.getBoolean("AutoStart");
 
-                ProcessFunctionLibrary.RegisterNewMCThread(SERVER_NAME, SERVER_DIR, SERVER_JAR, entry.getKey());
-                ThreadLogger.INFO.Output(" 已注册服务器：" + entry.getKey() + ":" + entry.getValue());
+                if (SERVER_AUTOSTART) {
+                    ProcessFunctionLibrary.RegisterNewMCThread(SERVER_NAME, SERVER_DIR, SERVER_JAR, entry.getKey());
+                    ThreadLogger.INFO.Output(" 已注册服务器：" + entry.getKey() + ":" + entry.getValue());
+                }
+
             }
 
         }

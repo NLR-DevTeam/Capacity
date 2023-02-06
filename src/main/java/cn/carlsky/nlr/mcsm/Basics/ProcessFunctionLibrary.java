@@ -26,6 +26,17 @@ public class ProcessFunctionLibrary extends java.lang.Thread {
         ThreadLogger.NoLine.INFO.Scanner("请输入JAR服务端名称：");
         String runjar_mcsm = data.Scan();
 
+        ThreadLogger.NoLine.INFO.Scanner("开启MCSM自动启动此服务器(Y/N)：");
+        String Auto = data.Scan();
+
+        Boolean AutoStart;
+
+        if(Auto.equals("Y")) {
+            AutoStart = true;
+        } else {
+            AutoStart = false;
+        }
+
         List<String> commandList = new ArrayList();
             commandList.add("java");
             commandList.add("-jar");
@@ -52,6 +63,7 @@ public class ProcessFunctionLibrary extends java.lang.Thread {
         NewServerJSON.put("ServerName", SERVER_NAME);
         NewServerJSON.put("ServerJarName", runjar_mcsm);
         NewServerJSON.put("CreateTime", data.Time.getDate());
+        NewServerJSON.put("AuthStart", AutoStart);
 
         VariableLibrary.Storage.HashMapServerJSONObject.put(Only_ID, NewServerJSON);
         VariableLibrary.Storage.HashMapServerOutput.put(Only_ID, "我的世界服务器 输出记录仪记录中...\nMinecraft Server Output Recording...\n");
@@ -62,6 +74,7 @@ public class ProcessFunctionLibrary extends java.lang.Thread {
         SetContent.put("ServerName",SERVER_NAME);
         SetContent.put("ServerDir",dir);
         SetContent.put("ServerJarName",runjar_mcsm);
+        SetContent.put("AutoStart", AutoStart);
 
         // 写入 Server List
 
@@ -109,6 +122,7 @@ public class ProcessFunctionLibrary extends java.lang.Thread {
         NewServerJSON.put("ServerName", SERVER_NAME);
         NewServerJSON.put("ServerJarName", runjar_mcsm);
         NewServerJSON.put("CreateTime", data.Time.getDate());
+        NewServerJSON.put("AuthStart", true);
 
         VariableLibrary.Storage.HashMapServerJSONObject.put(Only_ID, NewServerJSON);
         VariableLibrary.Storage.HashMapServerOutput.put(Only_ID, "我的世界服务器 输出记录仪记录中...\nMinecraft Server Output Recording...\n");
