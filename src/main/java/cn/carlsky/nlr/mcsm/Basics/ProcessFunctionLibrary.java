@@ -62,9 +62,10 @@ public class ProcessFunctionLibrary extends java.lang.Thread {
         VariableLibrary.Storage.HashMapServerProcess.get(Only_ID).getOutputStream().write(Now_Write.getBytes());
         VariableLibrary.Storage.HashMapServerProcess.get(Only_ID).getOutputStream().flush();
     }
-    public static void ProcessOutput(String Only_ID) throws IOException {
-        System.out.println(VariableLibrary.Storage.HashMapServerOutput.get(Only_ID));
-    }
+
+
+
+
 
     private static void readProcessOutput(Process process){
         read(process.getInputStream(), System.out);
