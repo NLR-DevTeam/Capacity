@@ -1,5 +1,6 @@
 <h1 align=center>MCServerManager</h1>
 <h3 align=center>我的世界服务器管理器</h3>
+![Beta](https://user-images.githubusercontent.com/79088785/216988237-ae0bd6ff-4d27-46c3-be99-fe33eeccb9e1.png)
 
 ### 介绍
 欢迎大家使用此程序！此程序可以较为简易化的管理在 **当前目录下** 的服务端，使用 ```JDK 17``` 运行，拥有：
