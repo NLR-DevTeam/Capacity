@@ -1,3 +1,4 @@
+import cn.carlsky.nlr.lib.io;
 import cn.carlsky.nlr.mcsm.System.Initialization;
 import cn.carlsky.nlr.mcsm.System.MainThread;
 

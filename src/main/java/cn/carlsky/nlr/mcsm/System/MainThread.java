@@ -83,11 +83,12 @@ public class MainThread {
 
         switch (CODE) {
             case "1":
-                ProcessFunctionLibrary.CreateNewMCThread(false);
+                ProcessFunctionLibrary.CreateNewMCThread();
                 RunServerPart();
                 break;
             case "2":
                 ProcessControl.DestroyServer();
+                RunServerPart();
                 break;
             case "3":
                 ProcessControl.ReadThreadOutputStream();

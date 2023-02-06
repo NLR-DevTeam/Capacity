@@ -1,12 +1,16 @@
 package cn.carlsky.nlr.mcsm.Basics;
 
+import cn.carlsky.nlr.lib.io;
 import cn.carlsky.nlr.mcsm.System.Ask;
 import cn.carlsky.nlr.mcsm.System.MainThread;
 import cn.carlsky.nlr.mcsm.System.ThreadLogger;
 import cn.carlsky.nlr.mcsm.System.VariableLibrary;
 import cn.carlsky.nlr.lib.data;
+import com.alibaba.fastjson2.JSON;
+import com.alibaba.fastjson2.JSONObject;
 
-import java.io.IOException;
+import java.io.*;
+import java.util.Properties;
 
 public class ProcessControl {
     public static void ReadThreadOutputStream() throws IOException {
@@ -58,7 +62,24 @@ public class ProcessControl {
     public static void DestroyServer() throws IOException {
         ThreadLogger.NoLine.INFO.Scanner(" 请输入进程唯一识别ID：");
         String ONLY_ID = data.Scan();
+
         if (ProcessChecker.CheckBasics(ONLY_ID)) {
+
+            Properties MainSetting = new Properties();
+            InputStream PropertiesStream = new FileInputStream("MCServerManager/Setting/main.properties");
+
+            MainSetting.load(PropertiesStream);
+            String ServerList = MainSetting.getProperty("serverList");
+            JSONObject SettingJSON = JSON.parseObject(ServerList);
+
+            try(BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("MCServerManager/Setting/main.properties"))){
+
+                SettingJSON.remove(ONLY_ID);
+                MainSetting.setProperty("serverList", SettingJSON.toJSONString());
+                MainSetting.store(bos, "MCSM Properties");
+
+            }
+
             VariableLibrary.Storage.HashMapServerProcess.get(ONLY_ID).destroy();
             VariableLibrary.Storage.HashMapServerProcess.remove(ONLY_ID);
             VariableLibrary.Storage.HashMapServerOutput.remove(ONLY_ID);
@@ -66,6 +87,22 @@ public class ProcessControl {
         } else {
             if(VariableLibrary.Storage.HashMapServerOutput.containsKey(ONLY_ID)) {
                 if(!VariableLibrary.Storage.HashMapServerProcess.get(ONLY_ID).isAlive()) {
+
+                    Properties MainSetting = new Properties();
+                    InputStream PropertiesStream = new FileInputStream("MCServerManager/Setting/main.properties");
+
+                    MainSetting.load(PropertiesStream);
+                    String ServerList = MainSetting.getProperty("serverList");
+                    JSONObject SettingJSON = JSON.parseObject(ServerList);
+
+                    try(BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("MCServerManager/Setting/main.properties"))){
+
+                        SettingJSON.remove(ONLY_ID);
+                        MainSetting.setProperty("serverList", SettingJSON.toJSONString());
+                        MainSetting.store(bos, "MCSM Properties");
+
+                    }
+
                     VariableLibrary.Storage.HashMapServerProcess.remove(ONLY_ID);
                     VariableLibrary.Storage.HashMapServerOutput.remove(ONLY_ID);
                     VariableLibrary.Storage.HashMapServerJSONObject.remove(ONLY_ID);

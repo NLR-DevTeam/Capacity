@@ -97,16 +97,24 @@ public class FileExist {
             }
         }
     }
-    public static void CheckMSCMSetting() throws IOException {
-        File MCP = new File("MCServerManager/Setting/main.json");
+    public static void CheckMCSMSetting(){
+        File MCP = new File("MCServerManager/Setting/main.properties");
         if(!MCP.exists()){
+            try {
+                Properties props = new Properties();
 
-            ThreadLogger.INFO.Checker("正在将默认配置写入 main.json ......");
-            JSONObject Set = new JSONObject();
-            Set.put("serverList", new JSONObject());
-            String OutSet = Set.toJSONString();
+                ThreadLogger.INFO.Checker("正在将默认配置写入 main.properties......");
+                props.put("serverList", "{}");
 
-            io.FileWriter("MCServerManager/Setting/main.json",OutSet);
+                // 使用"输出流"，将Properties集合中的KV键值对，写入*.properties文件
+                try(BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("MCServerManager/Setting/main.properties"))){
+                    props.store(bos, "MCSM Properties-Main");
+                    ThreadLogger.INFO.Checker("写入MCSM配置文件成功！");
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 }

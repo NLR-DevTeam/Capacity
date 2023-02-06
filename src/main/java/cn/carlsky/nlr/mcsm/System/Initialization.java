@@ -1,10 +1,16 @@
 package cn.carlsky.nlr.mcsm.System;
 
+import cn.carlsky.nlr.lib.io;
 import cn.carlsky.nlr.lib.net;
+import cn.carlsky.nlr.mcsm.Basics.ProcessFunctionLibrary;
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
+import com.sun.tools.javac.Main;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.Map;
+import java.util.Properties;
 
 public class Initialization {
     public static void Start() throws IOException {
@@ -12,11 +18,42 @@ public class Initialization {
         ThreadLogger.INFO.Output(" 正在初始化程序...");
         FileExist.CheckFolder();
         FileExist.CheckMCProperties();
-        FileExist.CheckMSCMSetting();
+        FileExist.CheckMCSMSetting();
+
+        // 把已存在的 main.properties 读到 VariableLibrary 中
+        Properties MainSetting = new Properties();
+        InputStream PropertiesStream = io.Properties.GetStream("MCServerManager/Setting/main.properties");
+        MainSetting.load(PropertiesStream);
+        String ServerList = MainSetting.getProperty("serverList");
+        JSONObject SettingJSON = JSON.parseObject(ServerList);
+
+        if (SettingJSON.get("serverList") != "{}") {
+
+            String entryScanString = ServerList;
+            JSONObject entryScan = JSON.parseObject(entryScanString);
+
+            for (Map.Entry<String, Object> entry : entryScan.entrySet()) {
+
+                String Value = entryScan.getString(entry.getKey());
+                JSONObject JSONValue = JSON.parseObject(Value);
+
+                String SERVER_NAME = JSONValue.getString("ServerName");
+                String SERVER_DIR = JSONValue.getString("ServerDir");
+                String SERVER_JAR = JSONValue.getString("ServerJarName");
+
+                ProcessFunctionLibrary.RegisterNewMCThread(SERVER_NAME, SERVER_DIR, SERVER_JAR, entry.getKey());
+                ThreadLogger.INFO.Output(" 已注册服务器：" + entry.getKey() + ":" + entry.getValue());
+            }
+
+        }
+
+        // 检查更新
+        CheckUpdate();
+    }
 
 
 
-        // 更新检查
+    private static void CheckUpdate() {
         ThreadLogger.INFO.Output(" 执行更新检查...");
 
         String CheckVersion = net.fetch("https://api.arkpowered.cn/library/public/mcsm/version.json");
