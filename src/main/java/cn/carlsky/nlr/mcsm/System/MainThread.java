@@ -83,7 +83,7 @@ public class MainThread {
 
         switch (CODE) {
             case "1":
-                ProcessFunctionLibrary.CreateNewMCThread();
+                ProcessFunctionLibrary.CreateNewMCThread(false);
                 RunServerPart();
                 break;
             case "2":

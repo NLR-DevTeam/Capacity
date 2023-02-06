@@ -14,7 +14,7 @@ import java.util.List;
 public class ProcessFunctionLibrary extends java.lang.Thread {
     public static Process MCProcess;
     public static String Only_ID;
-    public static void CreateNewMCThread() throws IOException {
+    public static void CreateNewMCThread(Boolean Register) throws IOException {
         ThreadLogger.NoLine.INFO.Scanner("请输入服务器名称：");
         String SERVER_NAME = data.Scan();
 
@@ -29,14 +29,16 @@ public class ProcessFunctionLibrary extends java.lang.Thread {
             commandList.add("-jar");
             commandList.add(runjar_mcsm);
 
-        try {
-            if (dir.isEmpty()) {
-                MCProcess = new ProcessBuilder(commandList).start();
-            } else {
-                MCProcess = new ProcessBuilder(commandList).directory(new File(dir)).start();
+        if(!Register) {
+            try {
+                if (dir.isEmpty()) {
+                    MCProcess = new ProcessBuilder(commandList).start();
+                } else {
+                    MCProcess = new ProcessBuilder(commandList).directory(new File(dir)).start();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
         }
 
         Thread BufferedReaderThread = new Thread(() -> {

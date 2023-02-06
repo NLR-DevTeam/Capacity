@@ -1,8 +1,12 @@
 package cn.carlsky.nlr.mcsm.System;
 
+import cn.carlsky.nlr.lib.io;
+import com.alibaba.fastjson2.JSONObject;
+
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
 import java.io.File;
+import java.io.IOException;
 import java.util.Properties;
 
 public class FileExist {
@@ -91,6 +95,18 @@ public class FileExist {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+        }
+    }
+    public static void CheckMSCMSetting() throws IOException {
+        File MCP = new File("MCServerManager/Setting/main.json");
+        if(!MCP.exists()){
+
+            ThreadLogger.INFO.Checker("正在将默认配置写入 main.json ......");
+            JSONObject Set = new JSONObject();
+            Set.put("serverList", new JSONObject());
+            String OutSet = Set.toJSONString();
+
+            io.FileWriter("MCServerManager/Setting/main.json",OutSet);
         }
     }
 }

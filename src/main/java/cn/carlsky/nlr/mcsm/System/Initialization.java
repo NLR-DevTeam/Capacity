@@ -4,11 +4,15 @@ import cn.carlsky.nlr.lib.net;
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
 
+import java.io.IOException;
+
 public class Initialization {
-    public static void Start() {
+    public static void Start() throws IOException {
         ThreadLogger.INFO.Output("=========================== Initialization ============================");
         ThreadLogger.INFO.Output(" 正在初始化程序...");
         FileExist.CheckFolder();
+        FileExist.CheckMCProperties();
+        FileExist.CheckMSCMSetting();
 
 
 
