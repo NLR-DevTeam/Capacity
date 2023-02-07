@@ -2,13 +2,12 @@ package cn.carlsky.nlr.mcsm.System;
 
 import cn.carlsky.nlr.lib.io;
 import cn.carlsky.nlr.lib.net;
+import cn.carlsky.nlr.mcsm.Basics.Account.Ark;
 import cn.carlsky.nlr.mcsm.Basics.ProcessFunctionLibrary;
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
-import com.sun.tools.javac.Main;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.Map;
 import java.util.Properties;
 
@@ -16,6 +15,7 @@ public class Initialization {
     public static void Start() throws IOException {
         ThreadLogger.INFO.Output("=========================== Initialization ============================");
         ThreadLogger.INFO.Output(" 正在初始化程序...");
+
         FileExist.CheckFolder();
         FileExist.CheckMCProperties();
         FileExist.CheckMCSMSetting();
@@ -44,11 +44,26 @@ public class Initialization {
 
                 if (SERVER_AUTOSTART) {
                     ProcessFunctionLibrary.RegisterNewMCThread(SERVER_NAME, SERVER_DIR, SERVER_JAR, entry.getKey());
-                    ThreadLogger.INFO.Output(" 已注册服务器：" + entry.getKey() + ":" + entry.getValue());
+                    ThreadLogger.INFO.Output(" 已注册进程：" + entry.getKey() + "：" + entry.getValue());
                 }
 
             }
 
+        }
+
+        if(MainSetting.getProperty("username") != ""){
+            JSONObject AccountCallBack = Ark.ArkAccountVerify(MainSetting.getProperty("username"), MainSetting.getProperty("usertoken"));
+            String Status = AccountCallBack.getString("Status");
+            if (Status.equals("OK")){
+
+                VariableLibrary.Storage.UserName = MainSetting.getProperty("username");
+                VariableLibrary.Storage.UserLoginToken = MainSetting.getProperty("usertoken");
+                VariableLibrary.Storage.UserLoginStatus = true;
+
+                ThreadLogger.INFO.Output(AccountCallBack.getString("msg"));
+            } else {
+                ThreadLogger.WARN.Output(AccountCallBack.getString("msg"));
+            }
         }
 
         // 检查更新

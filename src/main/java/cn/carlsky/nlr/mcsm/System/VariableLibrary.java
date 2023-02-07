@@ -8,8 +8,8 @@ import java.util.List;
 
 public class VariableLibrary {
     public class System {
-        public static int VERSION = 11;
-        public static String VERSION_STR = "Beta v2.4 SNAPSHOT";
+        public static int VERSION = 12;
+        public static String VERSION_STR = "Beta v2.5";
         public static final Date StartTime = new Date();
     }
     public class Storage {

@@ -104,7 +104,10 @@ public class FileExist {
                 Properties props = new Properties();
 
                 ThreadLogger.INFO.Checker("正在将默认配置写入 main.properties......");
+
                 props.put("serverList", "{}");
+                props.put("username", "{}");
+                props.put("usertoken", "{}");
 
                 // 使用"输出流"，将Properties集合中的KV键值对，写入*.properties文件
                 try(BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("MCServerManager/Setting/main.properties"))){

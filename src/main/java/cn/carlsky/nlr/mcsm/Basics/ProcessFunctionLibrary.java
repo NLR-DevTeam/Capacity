@@ -76,21 +76,22 @@ public class ProcessFunctionLibrary extends java.lang.Thread {
         SetContent.put("ServerJarName",runjar_mcsm);
         SetContent.put("AutoStart", AutoStart);
 
-        // 写入 Server List
+        if (AutoStart) {
+            // 写入 Server List
+            Properties MainSetting = new Properties();
+            InputStream PropertiesStream = new FileInputStream("MCServerManager/Setting/main.properties");
 
-        Properties MainSetting = new Properties();
-        InputStream PropertiesStream = new FileInputStream("MCServerManager/Setting/main.properties");
+            MainSetting.load(PropertiesStream);
+            String ServerList = MainSetting.getProperty("serverList");
+            JSONObject SettingJSON = JSON.parseObject(ServerList);
 
-        MainSetting.load(PropertiesStream);
-        String ServerList = MainSetting.getProperty("serverList");
-        JSONObject SettingJSON = JSON.parseObject(ServerList);
+            try(BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("MCServerManager/Setting/main.properties"))){
 
-        try(BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("MCServerManager/Setting/main.properties"))){
+                SettingJSON.put(Only_ID, SetContent);
+                MainSetting.setProperty("serverList", SettingJSON.toJSONString());
+                MainSetting.store(bos, "MCSM Properties");
 
-            SettingJSON.put(Only_ID, SetContent);
-            MainSetting.setProperty("serverList", SettingJSON.toJSONString());
-            MainSetting.store(bos, "MCSM Properties");
-
+            }
         }
 
         MainThread.RunServerPart();
