@@ -68,6 +68,7 @@ public class Initialization {
 
         // 检查更新
         CheckUpdate();
+        ThreadLogger.INFO.Output("=========================== Initialization ============================");
     }
 
 

@@ -22,9 +22,9 @@ public class GUI {
         ThreadLogger.INFO.Output(" Github 开源地址：https://github.com/NLR-DevTeam/MinecraftServerManager");
         ThreadLogger.INFO.Output(" 使用代表您同意并遵守方块盒子服务条款：https://arkpowered.cn/tos");
         ThreadLogger.INFO.Output("=============================== 用户信息 ===============================");
-        ThreadLogger.INFO.Output("登录状态：" + LOGINSTATUS);
+        ThreadLogger.INFO.Output(" 登录状态：" + LOGINSTATUS);
         if (VariableLibrary.Storage.UserLoginStatus.equals(true)) {
-            ThreadLogger.INFO.Output("用户名：" + VariableLibrary.Storage.UserName);
+            ThreadLogger.INFO.Output(" 用户名：" + VariableLibrary.Storage.UserName);
         }
         ThreadLogger.INFO.Output("=============================== 系统信息 ===============================");
         ThreadLogger.INFO.Output(" Java 运行环境：" + System.getProperty("java.version"));
