@@ -7,7 +7,6 @@ import cn.carlsky.nlr.mcsm.Basics.MCProperties.SetProperties;
 import cn.carlsky.nlr.mcsm.Basics.NormalControl;
 import cn.carlsky.nlr.mcsm.Basics.ProcessControl;
 import cn.carlsky.nlr.mcsm.Basics.ProcessFunctionLibrary;
-import com.sun.tools.javac.Main;
 
 import java.io.IOException;
 
