@@ -5,6 +5,7 @@ import cn.carlsky.nlr.mcsm.Basics.Account.Ark;
 import cn.carlsky.nlr.mcsm.Basics.Download.DownloadRequire;
 import cn.carlsky.nlr.mcsm.Basics.MCProperties.SetProperties;
 import cn.carlsky.nlr.mcsm.Basics.NormalControl;
+import cn.carlsky.nlr.mcsm.Basics.PresetTasks;
 import cn.carlsky.nlr.mcsm.Basics.ProcessControl;
 import cn.carlsky.nlr.mcsm.Basics.ProcessFunctionLibrary;
 
@@ -22,55 +23,52 @@ public class MainThread {
         String CODE = data.Scan();
 
         switch (CODE) {
-            case "1":
-                RunServerPart();
-                break;
-            case "2":
-                NormalControl.AgreeEULA();
-                break;
-            case "3":
+            case "1" -> RunServerPart();
+            case "2" -> NormalControl.AgreeEULA();
+            case "3" -> {
                 DownloadRequire.DownloadMCServerVersion();
                 MainThread.Run();
-                break;
-            case "4":
+            }
+            case "4" -> {
                 NormalControl.CheckIP();
                 MainThread.Run();
-                break;
-            case "5":
+            }
+            case "5" -> {
                 NormalControl.SearchMods();
                 MainThread.Run();
-                break;
-            case "6":
+            }
+            case "6" -> {
                 NormalControl.SearchPlugins();
                 MainThread.Run();
-                break;
-            case "7":
+            }
+            case "7" -> {
                 SetProperties.Guider();
                 MainThread.Run();
-                break;
-            case "8":
+            }
+            case "8" -> {
                 DeveloperPart();
                 Ask.Continue();
                 Run();
-                break;
-            case "97":
-                if(VariableLibrary.Storage.UserLoginStatus.equals(true)){
+            }
+            case "9" -> {
+                PresetTasks.CreateGUI();
+                Ask.Continue();
+                Run();
+            }
+            case "97" -> {
+                if (VariableLibrary.Storage.UserLoginStatus.equals(true)) {
                     Ark.Logout();
                 } else {
                     Ark.Guider();
                 }
-                break;
-            case "98":
+            }
+            case "98" -> {
                 ThreadLogger.INFO.Output("\n 反馈请前往Issue（反馈任何问题，也许最快）：https://github.com/CarlSkyCoding/ArkPowered\n 或方块盒子反馈工具：https://id.arkpowered.cn/panel/support\n 或发送邮箱到：skygod@arkpowered.cn\n 或加群：705439821\n");
                 Ask.Continue();
                 MainThread.Run();
-                break;
-            case "99":
-                Ask.Exit();
-                break;
-            default:
-                MainThread.Run();
-                break;
+            }
+            case "99" -> Ask.Exit();
+            default -> MainThread.Run();
         }
     }
 

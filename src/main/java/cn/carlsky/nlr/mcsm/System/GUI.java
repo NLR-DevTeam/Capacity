@@ -132,4 +132,31 @@ public class GUI {
         ThreadLogger.INFO.Output("=======================================================================");
         ThreadLogger.NoLine.INFO.Scanner(" 请按照执行菜单输入命令：");
     }
+
+    public static void PresetTasksGUI() {
+        ThreadLogger.use.OutLine.NoHead();
+        ThreadLogger.INFO.Output("============================= 预设任务列表 ==============================");
+        // 遍历 HashMap
+        int i;
+        i = 1;
+        for (Map.Entry<String, JSONObject> entry: VariableLibrary.Storage.HashMapPresetTaskManager.entrySet()) {
+            String CommandID = entry.getKey();
+            JSONObject VALUE = entry.getValue();
+
+            String COMMAND = VALUE.getString("command");
+            String OnlyID = VALUE.getString("only_id");
+
+            ThreadLogger.INFO.Output(" 快捷任务 " + i + " 命令ID：" + CommandID);
+            ThreadLogger.INFO.Output("    唯一识别ID：" + OnlyID);
+            ThreadLogger.INFO.Output("    命令内容：" + COMMAND);
+            ThreadLogger.INFO.Output("");
+            i++;
+        }
+        ThreadLogger.INFO.Output("============================= 预设任务菜单 ==============================");
+        ThreadLogger.INFO.Output("1.新建一个预设任务");
+        ThreadLogger.INFO.Output("2.运行任务");
+        ThreadLogger.INFO.Output("99.回到主菜单");
+        ThreadLogger.INFO.Output("=======================================================================");
+        ThreadLogger.NoLine.INFO.Scanner(" 请按照执行菜单输入命令：");
+    }
 }

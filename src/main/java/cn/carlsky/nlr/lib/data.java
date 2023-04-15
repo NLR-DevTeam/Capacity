@@ -19,10 +19,10 @@ public class data {
         public static int RandomOnlyID() {
             Random RandomBuilder = new Random();
 
-            int only_id = RandomBuilder.nextInt(9999);
+            int only_id = RandomBuilder.nextInt(99999);
 
             while(Map.containsKey(only_id)) {
-                only_id = RandomBuilder.nextInt(9999);
+                only_id = RandomBuilder.nextInt(99999);
             }
 
             return only_id;

@@ -1,5 +1,6 @@
 package cn.carlsky.nlr.mcsm.System;
 
+import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
 
 import java.util.Date;
@@ -8,8 +9,8 @@ import java.util.List;
 
 public class VariableLibrary {
     public class System {
-        public static int VERSION = 14;
-        public static String VERSION_STR = "Release v3.0";
+        public static int VERSION = 15;
+        public static String VERSION_STR = "Release v3.0.1";
         public static final Date StartTime = new Date();
     }
     public class Storage {
@@ -20,5 +21,7 @@ public class VariableLibrary {
         public static HashMap<String, String> HashMapServerOutput = new HashMap<String, String>();
         public static HashMap<String, Process> HashMapServerProcess = new HashMap<String, Process>();
         public static HashMap<String, List> HashMapServerStartCommand = new HashMap<String, List>();
+//        public static HashMap<String, JSONObject> HashMapServerPlannedTasksManager = new HashMap<String, JSONObject>();
+        public static HashMap<String, JSONObject> HashMapPresetTaskManager = new HashMap<String, JSONObject>();
     }
 }

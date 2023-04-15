@@ -9,17 +9,13 @@ public class Ask {
         ThreadLogger.NoLine.INFO.Scanner(" 您是否要退出此程序？(Y/N，输入其他为不退出)：");
         String CODE = data.Scan();
         switch (CODE) {
-            case "Y":
-                System.exit(0);
-                break;
-            case "N":
-                MainThread.Run();
-                break;
-            case "114514":
+            case "Y" -> System.exit(0);
+            case "N" -> MainThread.Run();
+            case "114514" -> {
                 ThreadLogger.INFO.Output(" 嗯！哼哼！啊啊啊啊啊啊啊啊啊啊啊啊！！");
                 Ask.Continue();
                 MainThread.Run();
-                break;
+            }
         }
     }
 
