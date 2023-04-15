@@ -40,7 +40,7 @@ public class PresetTasks {
         ThreadLogger.NoLine.INFO.Scanner("请输入任务ID：");
         String CommandID = data.Scan();
 
-        Run (CommandID);
+        Run(CommandID);
     }
 
     // Private Control 部分
