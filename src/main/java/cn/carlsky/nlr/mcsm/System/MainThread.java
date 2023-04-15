@@ -23,51 +23,61 @@ public class MainThread {
         String CODE = data.Scan();
 
         switch (CODE) {
-            case "1" -> RunServerPart();
-            case "2" -> NormalControl.AgreeEULA();
-            case "3" -> {
+            case "/manage","1" -> RunServerPart();
+            case "/eula","2" -> NormalControl.AgreeEULA();
+            case "/download","3" -> {
                 DownloadRequire.DownloadMCServerVersion();
                 MainThread.Run();
             }
-            case "4" -> {
+            case "/ip","4" -> {
                 NormalControl.CheckIP();
                 MainThread.Run();
             }
-            case "5" -> {
+            case "/checkmods","5" -> {
                 NormalControl.SearchMods();
                 MainThread.Run();
             }
-            case "6" -> {
+            case "/checkplugins","6" -> {
                 NormalControl.SearchPlugins();
                 MainThread.Run();
             }
-            case "7" -> {
+            case "/setserver","7" -> {
                 SetProperties.Guider();
                 MainThread.Run();
             }
-            case "8" -> {
+            case "/developermode","8" -> {
                 DeveloperPart();
                 Ask.Continue();
                 Run();
             }
-            case "9" -> {
+            case "/task","9" -> {
                 PresetTasks.CreateGUI();
                 Ask.Continue();
                 Run();
             }
-            case "97" -> {
+            case "/account","97" -> {
                 if (VariableLibrary.Storage.UserLoginStatus.equals(true)) {
                     Ark.Logout();
                 } else {
                     Ark.Guider();
                 }
             }
-            case "98" -> {
+            case "/support","98" -> {
                 ThreadLogger.INFO.Output("\n 反馈请前往Issue（反馈任何问题，也许最快）：https://github.com/CarlSkyCoding/ArkPowered\n 或方块盒子反馈工具：https://id.arkpowered.cn/panel/support\n 或发送邮箱到：skygod@arkpowered.cn\n 或加群：705439821\n");
                 Ask.Continue();
                 MainThread.Run();
             }
-            case "99" -> Ask.Exit();
+            case "/exit","99" -> Ask.Exit();
+            case "/info" -> {
+                GUI.INFO();
+                Ask.Continue();
+                MainThread.Run();
+            }
+            case "/help" -> {
+                GUI.HelpGUI();
+                Ask.Continue();
+                MainThread.Run();
+            }
             default -> MainThread.Run();
         }
     }

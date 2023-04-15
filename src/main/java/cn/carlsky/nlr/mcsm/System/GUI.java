@@ -38,6 +38,7 @@ public class GUI {
         ThreadLogger.INFO.Output(" 6.查看plugins");
         ThreadLogger.INFO.Output(" 7.更改服务器设置");
         ThreadLogger.INFO.Output(" 8.进入开发者菜单");
+        ThreadLogger.INFO.Output(" 9.管理服务器快捷命令");
         if (VariableLibrary.Storage.UserLoginStatus.equals(true)) {
             ThreadLogger.INFO.Output(" 97.退出登录方块盒子账户");
         } else {
@@ -46,7 +47,28 @@ public class GUI {
         ThreadLogger.INFO.Output(" 98.反馈Bugs/提供建议");
         ThreadLogger.INFO.Output(" 99.退出程序");
         ThreadLogger.INFO.Output("=======================================================================");
-        ThreadLogger.NoLine.INFO.Scanner(" 请输入命令序号：");
+        ThreadLogger.INFO.Output(" 输入 /help 可呼出帮助菜单");
+        ThreadLogger.INFO.Output("=======================================================================");
+        ThreadLogger.NoLine.INFO.Scanner(" 请输入命令序号或指令：");
+    }
+
+    public static void HelpGUI() {
+
+        ThreadLogger.use.OutLine.NoHead();
+        ThreadLogger.INFO.Output("=============================== 帮助菜单 ===============================");
+        ThreadLogger.INFO.Output(" /manage 服务器实例管理");
+        ThreadLogger.INFO.Output(" /eula 同意 EULA 协议");
+        ThreadLogger.INFO.Output(" /download 使用简易工具下载服务端");
+        ThreadLogger.INFO.Output(" /ip 查看自己的内网和公网IP");
+        ThreadLogger.INFO.Output(" /checkmods 查看mods");
+        ThreadLogger.INFO.Output(" /checkplugins 查看plugins");
+        ThreadLogger.INFO.Output(" /setserver 更改服务器设置");
+        ThreadLogger.INFO.Output(" /developermode进入开发者菜单");
+        ThreadLogger.INFO.Output(" /task 管理服务器快捷命令");
+        ThreadLogger.INFO.Output(" /account 管理账户");
+        ThreadLogger.INFO.Output(" /support 反馈Bugs or 提供建议");
+        ThreadLogger.INFO.Output(" /exit 退出程序");
+        ThreadLogger.INFO.Output("=======================================================================");
     }
 
     public static void ServerListGUI() {
@@ -158,5 +180,15 @@ public class GUI {
         ThreadLogger.INFO.Output("99.回到主菜单");
         ThreadLogger.INFO.Output("=======================================================================");
         ThreadLogger.NoLine.INFO.Scanner(" 请按照执行菜单输入命令：");
+    }
+
+    public static void INFO() {
+        ThreadLogger.INFO.Output("============================= 开发组织信息 ==============================");
+        ThreadLogger.INFO.Output("  NLR DevTeam");
+        ThreadLogger.INFO.Output("  目前维护和开发人员：CarlSky");
+        ThreadLogger.INFO.Output("  感谢大家长期的支持和建议！");
+        ThreadLogger.INFO.Output("");
+        ThreadLogger.INFO.Output("  https://www.nlrdev.top");
+        ThreadLogger.INFO.Output("=======================================================================");
     }
 }
