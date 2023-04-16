@@ -63,7 +63,7 @@ public class MainThread {
                 }
             }
             case "/support","98" -> {
-                ThreadLogger.INFO.Output("\n 反馈请前往Issue（反馈任何问题，也许最快）：https://github.com/CarlSkyCoding/ArkPowered\n 或方块盒子反馈工具：https://id.arkpowered.cn/panel/support\n 或发送邮箱到：skygod@arkpowered.cn\n 或加群：705439821\n");
+                ThreadLogger.INFO.Output("\n\n 反馈请前往Issue（反馈任何问题，也许最快）：https://github.com/CarlSkyCoding/ArkPowered\n 或方块盒子反馈工具：https://id.arkpowered.cn/panel/support\n 或发送邮箱到：skygod@arkpowered.cn\n 或加群：705439821\n");
                 Ask.Continue();
                 MainThread.Run();
             }
@@ -124,16 +124,9 @@ public class MainThread {
         String CODE = data.Scan();
 
         switch (CODE) {
-            case "1":
-                ProcessControl.ListAllProcess();
-                Ask.Continue();
-                break;
-            case "99":
-                MainThread.Run();
-                break;
-            default:
-                MainThread.DeveloperPart();
-                break;
+            case "1" -> ProcessControl.ListAllProcess();
+            case "99" -> MainThread.Run();
+            default -> MainThread.DeveloperPart();
         }
     }
 }

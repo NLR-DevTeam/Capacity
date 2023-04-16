@@ -24,7 +24,7 @@ public class ThreadLogger {
         public static void Scanner(String TEXT) {
             SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
             Date date = new Date(System.currentTimeMillis());
-            System.out.println("[" + formatter.format(date) + "] [MCSManager/INFO] [Scanner] " + TEXT);
+            System.out.println("[" + formatter.format(date) + "] [MCSManager/INFO] [TYPEIN] " + TEXT);
         }
 
         public static void Checker(String TEXT) {
@@ -43,7 +43,7 @@ public class ThreadLogger {
         public static void Scanner(String TEXT) {
             SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
             Date date = new Date(System.currentTimeMillis());
-            System.out.println("[" + formatter.format(date) + "] [MCSManager/WARN] [Scanner] " + TEXT);
+            System.out.println("[" + formatter.format(date) + "] [MCSManager/WARN] [TYPEIN] " + TEXT);
         }
 
         public static void Checker(String TEXT) {
@@ -64,7 +64,7 @@ public class ThreadLogger {
             public static void Scanner(String TEXT) {
                 SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
                 Date date = new Date(System.currentTimeMillis());
-                System.out.print("[" + formatter.format(date) + "] [MCSManager/INFO] [Scanner] " + TEXT);
+                System.out.print("[" + formatter.format(date) + "] [MCSManager/INFO] [TYPEIN] " + TEXT);
             }
 
             public static void Checker(String TEXT) {
@@ -83,7 +83,7 @@ public class ThreadLogger {
             public static void Scanner(String TEXT) {
                 SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
                 Date date = new Date(System.currentTimeMillis());
-                System.out.print("[" + formatter.format(date) + "] [MCSManager/WARN] [Scanner] " + TEXT);
+                System.out.print("[" + formatter.format(date) + "] [MCSManager/WARN] [TYPEIN] " + TEXT);
             }
 
             public static void Checker(String TEXT) {

@@ -79,7 +79,7 @@ public class NormalControl {
             } else if (file.isFile()) {
                 System.out.println("文件:" + file.getPath());
             }else{
-                System.out.println("目录目前不存在：可能未运行服务端/不是相应API的客户端");
+                ThreadLogger.INFO.Output("目录目前不存在：可能未运行服务端/不是相应API的客户端");
             }
         }
     }

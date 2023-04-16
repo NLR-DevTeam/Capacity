@@ -150,8 +150,8 @@ public class GUI {
     public static void DeveloperGUI() {
         ThreadLogger.use.OutLine.NoHead();
         ThreadLogger.INFO.Output("============================== 开发者菜单 ===============================");
-        ThreadLogger.INFO.Output("1.列出Only_ID和Process PID/exited");
-        ThreadLogger.INFO.Output("99.回到主菜单");
+        ThreadLogger.INFO.Output(" 1.列出Only_ID和Process PID/exited");
+        ThreadLogger.INFO.Output(" 99.回到主菜单");
         ThreadLogger.INFO.Output("=======================================================================");
         ThreadLogger.NoLine.INFO.Scanner(" 请按照执行菜单输入命令：");
     }
@@ -176,9 +176,9 @@ public class GUI {
             i++;
         }
         ThreadLogger.INFO.Output("============================= 预设任务菜单 ==============================");
-        ThreadLogger.INFO.Output("1.新建一个预设任务");
-        ThreadLogger.INFO.Output("2.运行任务");
-        ThreadLogger.INFO.Output("99.回到主菜单");
+        ThreadLogger.INFO.Output(" 1.新建一个预设任务");
+        ThreadLogger.INFO.Output(" 2.运行任务");
+        ThreadLogger.INFO.Output(" 99.回到主菜单");
         ThreadLogger.INFO.Output("=======================================================================");
         ThreadLogger.NoLine.INFO.Scanner(" 请按照执行菜单输入命令：");
     }
