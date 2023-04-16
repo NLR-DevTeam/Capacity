@@ -64,7 +64,7 @@ public class GUI {
         ThreadLogger.INFO.Output(" /checkmods 查看mods");
         ThreadLogger.INFO.Output(" /checkplugins 查看plugins");
         ThreadLogger.INFO.Output(" /setserver 更改服务器设置");
-        ThreadLogger.INFO.Output(" /developermode进入开发者菜单");
+        ThreadLogger.INFO.Output(" /developermode 进入开发者菜单");
         ThreadLogger.INFO.Output(" /task 管理服务器快捷命令");
         ThreadLogger.INFO.Output(" /account 管理账户");
         ThreadLogger.INFO.Output(" /support 反馈Bugs or 提供建议");

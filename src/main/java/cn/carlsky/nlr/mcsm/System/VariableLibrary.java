@@ -9,8 +9,8 @@ import java.util.List;
 
 public class VariableLibrary {
     public static class System {
-        public static int VERSION = 16;
-        public static String VERSION_STR = "Release v3.0.3";
+        public static int VERSION = 17;
+        public static String VERSION_STR = "正式版 v3.0.4";
         public static final Date StartTime = new Date();
     }
     public static class Storage {

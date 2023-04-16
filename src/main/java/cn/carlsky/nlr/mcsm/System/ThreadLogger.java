@@ -18,38 +18,38 @@ public class ThreadLogger {
         public static void Output(String TEXT) {
             SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
             Date date = new Date(System.currentTimeMillis());
-            System.out.println("[" + formatter.format(date) + "] [MCSManager/INFO] [Output] " + TEXT);
+            System.out.println("[" + formatter.format(date) + "] [INFO] [Output] " + TEXT);
         }
 
         public static void Scanner(String TEXT) {
             SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
             Date date = new Date(System.currentTimeMillis());
-            System.out.println("[" + formatter.format(date) + "] [MCSManager/INFO] [TYPEIN] " + TEXT);
+            System.out.println("[" + formatter.format(date) + "] [INFO] [TYPEIN] " + TEXT);
         }
 
         public static void Checker(String TEXT) {
             SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
             Date date = new Date(System.currentTimeMillis());
-            System.out.println("[" + formatter.format(date) + "] [MCSManager/INFO] [Checker] " + TEXT);
+            System.out.println("[" + formatter.format(date) + "] [INFO] [Checker] " + TEXT);
         }
     }
     public class WARN {
         public static void Output(String TEXT) {
             SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
             Date date = new Date(System.currentTimeMillis());
-            System.out.println("[" + formatter.format(date) + "] [MCSManager/WARN] [Output] " + TEXT);
+            System.out.println("[" + formatter.format(date) + "] [WARN] [Output] " + TEXT);
         }
 
         public static void Scanner(String TEXT) {
             SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
             Date date = new Date(System.currentTimeMillis());
-            System.out.println("[" + formatter.format(date) + "] [MCSManager/WARN] [TYPEIN] " + TEXT);
+            System.out.println("[" + formatter.format(date) + "] [WARN] [TYPEIN] " + TEXT);
         }
 
         public static void Checker(String TEXT) {
             SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
             Date date = new Date(System.currentTimeMillis());
-            System.out.println("[" + formatter.format(date) + "] [MCSManager/WARN] [Checker] " + TEXT);
+            System.out.println("[" + formatter.format(date) + "] [WARN] [Checker] " + TEXT);
         }
     }
 
@@ -58,38 +58,38 @@ public class ThreadLogger {
             public static void Output(String TEXT) {
                 SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
                 Date date = new Date(System.currentTimeMillis());
-                System.out.print("[" + formatter.format(date) + "] [MCSManager/INFO] [Output] " + TEXT);
+                System.out.print("[" + formatter.format(date) + "] [INFO] [Output] " + TEXT);
             }
 
             public static void Scanner(String TEXT) {
                 SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
                 Date date = new Date(System.currentTimeMillis());
-                System.out.print("[" + formatter.format(date) + "] [MCSManager/INFO] [TYPEIN] " + TEXT);
+                System.out.print("[" + formatter.format(date) + "] [INFO] [TYPEIN] " + TEXT);
             }
 
             public static void Checker(String TEXT) {
                 SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
                 Date date = new Date(System.currentTimeMillis());
-                System.out.print("[" + formatter.format(date) + "] [MCSManager/INFO] [Checker] " + TEXT);
+                System.out.print("[" + formatter.format(date) + "] [INFO] [Checker] " + TEXT);
             }
         }
         public class WARN {
             public static void Output(String TEXT) {
                 SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
                 Date date = new Date(System.currentTimeMillis());
-                System.out.print("[" + formatter.format(date) + "] [MCSManager/WARN] [Output] " + TEXT);
+                System.out.print("[" + formatter.format(date) + "] [WARN] [Output] " + TEXT);
             }
 
             public static void Scanner(String TEXT) {
                 SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
                 Date date = new Date(System.currentTimeMillis());
-                System.out.print("[" + formatter.format(date) + "] [MCSManager/WARN] [TYPEIN] " + TEXT);
+                System.out.print("[" + formatter.format(date) + "] [WARN] [TYPEIN] " + TEXT);
             }
 
             public static void Checker(String TEXT) {
                 SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
                 Date date = new Date(System.currentTimeMillis());
-                System.out.print("[" + formatter.format(date) + "] [MCSManager/WARN] [Checker] " + TEXT);
+                System.out.print("[" + formatter.format(date) + "] [WARN] [Checker] " + TEXT);
             }
         }
     }
