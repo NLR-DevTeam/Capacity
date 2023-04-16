@@ -29,6 +29,7 @@ public class GUI {
         ThreadLogger.INFO.Output("=============================== 系统信息 ===============================");
         ThreadLogger.INFO.Output(" Java 运行环境：" + System.getProperty("java.version"));
         ThreadLogger.INFO.Output(" 当前时间：" + data.Time.getDate());
+        ThreadLogger.INFO.Output(" 程序启动时间：" + data.Time.getStartDate());
         ThreadLogger.INFO.Output("=============================== 管理菜单 ===============================");
         ThreadLogger.INFO.Output(" 1.服务器实例管理");
         ThreadLogger.INFO.Output(" 2.同意 EULA 协议");

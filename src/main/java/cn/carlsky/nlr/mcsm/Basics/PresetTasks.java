@@ -33,42 +33,44 @@ public class PresetTasks {
         ThreadLogger.NoLine.INFO.Scanner("请输入执行命令：");
         String COMMAND = data.Scan();
 
-        Create(ONLY_ID, COMMAND);
+        Control.Create(ONLY_ID, COMMAND);
     }
 
     public static void RunTask() throws IOException {
         ThreadLogger.NoLine.INFO.Scanner("请输入任务ID：");
         String CommandID = data.Scan();
 
-        Run(CommandID);
+        Control.Run(CommandID);
     }
 
-    // Private Control 部分
-    private static void Create(String ONLY_ID, String COMMAND) {
-        if(VariableLibrary.Storage.HashMapServerOutput.containsKey(ONLY_ID)) {
+    // 控制 Task
+    private static class Control {
+        private static void Create(String ONLY_ID, String COMMAND) {
+            if(VariableLibrary.Storage.HashMapServerOutput.containsKey(ONLY_ID)) {
 
-            String CommandID = String.valueOf(data.random.RandomOnlyID());
+                String CommandID = String.valueOf(data.random.RandomOnlyID());
 
-            JSONObject JSONValue = new JSONObject();
-            JSONValue.put("command", COMMAND);
-            JSONValue.put("only_id", ONLY_ID);
-            VariableLibrary.Storage.HashMapPresetTaskManager.put(CommandID, JSONValue);
-            ThreadLogger.INFO.Output(" 创建任务成功");
-            Ask.Continue();
-        } else {
-            ThreadLogger.INFO.Output(" 未知的唯一识别ID？即将返回主菜单...");
+                JSONObject JSONValue = new JSONObject();
+                JSONValue.put("command", COMMAND);
+                JSONValue.put("only_id", ONLY_ID);
+                VariableLibrary.Storage.HashMapPresetTaskManager.put(CommandID, JSONValue);
+                ThreadLogger.INFO.Output(" 创建任务成功");
+                Ask.Continue();
+            } else {
+                ThreadLogger.INFO.Output(" 未知的唯一识别ID？即将返回主菜单...");
+            }
         }
-    }
 
-    private static void Run(String CommandID) throws IOException {
-        if (VariableLibrary.Storage.HashMapPresetTaskManager.containsKey(CommandID)) {
+        private static void Run(String CommandID) throws IOException {
+            if (VariableLibrary.Storage.HashMapPresetTaskManager.containsKey(CommandID)) {
 
-            JSONObject JSONValue = VariableLibrary.Storage.HashMapPresetTaskManager.get(CommandID);
+                JSONObject JSONValue = VariableLibrary.Storage.HashMapPresetTaskManager.get(CommandID);
 
-            String COMMAND = JSONValue.getString("command");
-            String ONLY_ID = JSONValue.getString("only_id");
+                String COMMAND = JSONValue.getString("command");
+                String ONLY_ID = JSONValue.getString("only_id");
 
-            ProcessFunctionLibrary.WriteCommandToThread(ONLY_ID, COMMAND);
+                ProcessFunctionLibrary.WriteCommandToThread(ONLY_ID, COMMAND);
+            }
         }
     }
 }

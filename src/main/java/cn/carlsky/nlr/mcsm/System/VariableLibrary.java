@@ -9,19 +9,26 @@ import java.util.List;
 
 public class VariableLibrary {
     public class System {
-        public static int VERSION = 15;
-        public static String VERSION_STR = "Release v3.0.1";
+        public static int VERSION = 17;
+        public static String VERSION_STR = "Release v3.0.3";
         public static final Date StartTime = new Date();
     }
     public class Storage {
         public static Boolean UserLoginStatus = false;
         public static String UserName = new String();
         public static String UserLoginToken = new String();
+
+
+
+        // Storage HashMap Part
         public static HashMap<String, JSONObject> HashMapServerJSONObject = new HashMap<String, JSONObject>();
         public static HashMap<String, String> HashMapServerOutput = new HashMap<String, String>();
         public static HashMap<String, Process> HashMapServerProcess = new HashMap<String, Process>();
         public static HashMap<String, List> HashMapServerStartCommand = new HashMap<String, List>();
 //        public static HashMap<String, JSONObject> HashMapServerPlannedTasksManager = new HashMap<String, JSONObject>();
         public static HashMap<String, JSONObject> HashMapPresetTaskManager = new HashMap<String, JSONObject>();
+
+
+        public static HashMap<Integer, String> randIDMap = new HashMap<Integer, String>();
     }
 }
