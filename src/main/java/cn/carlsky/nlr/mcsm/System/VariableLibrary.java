@@ -8,12 +8,12 @@ import java.util.HashMap;
 import java.util.List;
 
 public class VariableLibrary {
-    public class System {
-        public static int VERSION = 17;
+    public static class System {
+        public static int VERSION = 16;
         public static String VERSION_STR = "Release v3.0.3";
         public static final Date StartTime = new Date();
     }
-    public class Storage {
+    public static class Storage {
         public static Boolean UserLoginStatus = false;
         public static String UserName = new String();
         public static String UserLoginToken = new String();
