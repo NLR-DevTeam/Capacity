@@ -1,20 +1,14 @@
 package cn.carlsky.nlr.mcsm.Basics.Account;
 
 import cn.carlsky.nlr.lib.io;
-import cn.carlsky.nlr.mcsm.System.Ask;
-import cn.carlsky.nlr.mcsm.System.MainThread;
-import cn.carlsky.nlr.mcsm.System.ThreadLogger;
+import cn.carlsky.nlr.mcsm.System.*;
 import cn.carlsky.nlr.lib.data;
 import cn.carlsky.nlr.lib.net;
-import cn.carlsky.nlr.mcsm.System.VariableLibrary;
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
 import com.sun.tools.javac.Main;
 
-import java.io.BufferedOutputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.Properties;
 
 public class Ark {
@@ -155,5 +149,89 @@ public class Ark {
 
         ThreadLogger.INFO.Output("退出登录成功！");
         Ask.Continue();
+        MainThread.Run();
+    }
+
+    public static class AccountControl {
+
+        public static void Panel() throws IOException {
+
+            GUI.AccountGUI();
+
+            String CODE = data.Scan();
+
+            switch (CODE) {
+                case "1" -> {
+                    CloudService();
+                }
+                case "98" -> {
+                    Logout();
+                }
+                case "99" -> {
+                    MainThread.Run();
+                }
+            }
+        }
+
+        private static void CloudService() throws IOException {
+
+            GUI.CloudServiceGUI();
+
+            String CODECS = data.Scan();
+
+            String BackData;
+            JSONObject BackJSON;
+            String Output;
+
+            switch (CODECS) {
+                case "1" -> {
+                    BackData = net.fetch("https://service.cloud.arkpowered.cn/api/mcsm/save/put.php?username=" + VariableLibrary.Storage.UserName + "&usertoken=" + VariableLibrary.Storage.UserLoginToken + "&data=" + VariableLibrary.Storage.ServerList());
+                    BackJSON = JSON.parseObject(BackData);
+                    if (BackJSON.get("status").equals("1")) {
+                        ThreadLogger.INFO.Output(" 数据成功同步到云端");
+                        Ask.Continue();
+                        CloudService();
+                    } else {
+                        ThreadLogger.INFO.Output(" 同步失败");
+                        Ask.Continue();
+                        CloudService();
+                    }
+                    break;
+                }
+                case "2" -> {
+                    BackData = net.fetch("https://service.cloud.arkpowered.cn/api/mcsm/save/get.php?username=" + VariableLibrary.Storage.UserName + "&usertoken=" + VariableLibrary.Storage.UserLoginToken);
+                    BackJSON = JSON.parseObject(BackData);
+                    if (BackJSON.get("status").equals("1")) {
+                        // 写入 Server List
+                        Properties MainSetting = new Properties();
+                        InputStream PropertiesStream = new FileInputStream("MCServerManager/Setting/main.properties");
+
+                        MainSetting.load(PropertiesStream);
+
+                        try(BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("MCServerManager/Setting/main.properties"))){
+
+                            MainSetting.setProperty("serverList", (String) BackJSON.get("cloudinfo"));
+                            MainSetting.store(bos, "MCSM Properties");
+
+                        }
+                        ThreadLogger.INFO.Output(" 数据成功同步到本地");
+                        Ask.Continue();
+                        CloudService();
+                    } else {
+                        System.out.println(BackJSON.get("status"));
+                        ThreadLogger.INFO.Output(" 同步失败");
+                        Ask.Continue();
+                        CloudService();
+                    }
+                    break;
+                }
+                case "99" -> {
+                    Panel();
+                }
+                default -> {
+                    CloudService();
+                }
+            }
+        }
     }
 }

@@ -52,12 +52,10 @@ public class MainThread {
             }
             case "/task","9" -> {
                 PresetTasks.CreateGUI();
-                Ask.Continue();
-                Run();
             }
             case "/account","97" -> {
                 if (VariableLibrary.Storage.UserLoginStatus.equals(true)) {
-                    Ark.Logout();
+                    Ark.AccountControl.Panel();
                 } else {
                     Ark.Guider();
                 }
@@ -67,7 +65,7 @@ public class MainThread {
                 Ask.Continue();
                 MainThread.Run();
             }
-            case "/exit","99" -> Ask.Exit();
+            case "/exit","/quit","99" -> Ask.Exit();
             case "/info" -> {
                 GUI.INFO();
                 Ask.Continue();
@@ -89,31 +87,23 @@ public class MainThread {
         String CODE = data.Scan();
 
         switch (CODE) {
-            case "1":
+            case "1" -> {
                 ProcessFunctionLibrary.CreateNewMCThread();
                 RunServerPart();
-                break;
-            case "2":
+            }
+            case "2" -> {
                 ProcessControl.DestroyServer();
                 RunServerPart();
-                break;
-            case "3":
-                ProcessControl.ReadThreadOutputStream();
-                break;
-            case "4":
+            }
+            case "3" -> ProcessControl.ReadThreadOutputStream();
+            case "4" -> {
                 ProcessControl.RunCommandInThread();
                 Ask.Continue();
                 RunServerPart();
-                break;
-            case "5":
-                ProcessControl.StopServer();
-                break;
-            case "99":
-                Run();
-                break;
-            default:
-                MainThread.RunServerPart();
-                break;
+            }
+            case "5" -> ProcessControl.StopServer();
+            case "99" -> Run();
+            default -> MainThread.RunServerPart();
         }
     }
 

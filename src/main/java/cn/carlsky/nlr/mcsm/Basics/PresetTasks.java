@@ -17,8 +17,12 @@ public class PresetTasks {
         switch (CODE) {
             case "1":
                 CreateTasks();
+                CreateGUI();
+                break;
             case "2":
                 RunTask();
+                CreateGUI();
+                break;
             case "99":
                 MainThread.Run();
             default:
@@ -34,6 +38,7 @@ public class PresetTasks {
         String COMMAND = data.Scan();
 
         Control.Create(ONLY_ID, COMMAND);
+        Ask.Continue();
     }
 
     public static void RunTask() throws IOException {
@@ -41,6 +46,7 @@ public class PresetTasks {
         String CommandID = data.Scan();
 
         Control.Run(CommandID);
+        Ask.Continue();
     }
 
     // 控制 Task
@@ -55,7 +61,6 @@ public class PresetTasks {
                 JSONValue.put("only_id", ONLY_ID);
                 VariableLibrary.Storage.HashMapPresetTaskManager.put(CommandID, JSONValue);
                 ThreadLogger.INFO.Output(" 创建任务成功");
-                Ask.Continue();
             } else {
                 ThreadLogger.INFO.Output(" 未知的唯一识别ID？即将返回主菜单...");
             }

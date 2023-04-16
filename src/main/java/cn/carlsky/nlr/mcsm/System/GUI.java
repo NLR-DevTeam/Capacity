@@ -1,9 +1,19 @@
 package cn.carlsky.nlr.mcsm.System;
 
 import cn.carlsky.nlr.lib.data;
+import cn.carlsky.nlr.lib.io;
+import cn.carlsky.nlr.lib.net;
+import cn.carlsky.nlr.mcsm.Basics.ProcessFunctionLibrary;
+import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
+import com.sun.tools.javac.Main;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Map;
+import java.util.Objects;
+import java.util.Properties;
 
 public class GUI {
     public static String LOGINSTATUS;
@@ -41,7 +51,7 @@ public class GUI {
         ThreadLogger.INFO.Output(" 8.进入开发者菜单");
         ThreadLogger.INFO.Output(" 9.管理服务器快捷命令");
         if (VariableLibrary.Storage.UserLoginStatus.equals(true)) {
-            ThreadLogger.INFO.Output(" 97.退出登录方块盒子账户");
+            ThreadLogger.INFO.Output(" 97.管理方块盒子账户");
         } else {
             ThreadLogger.INFO.Output(" 97.登录方块盒子账户");
         }
@@ -68,7 +78,7 @@ public class GUI {
         ThreadLogger.INFO.Output(" /task 管理服务器快捷命令");
         ThreadLogger.INFO.Output(" /account 管理账户");
         ThreadLogger.INFO.Output(" /support 反馈Bugs or 提供建议");
-        ThreadLogger.INFO.Output(" /exit 退出程序");
+        ThreadLogger.INFO.Output(" /exit /quit 退出程序");
         ThreadLogger.INFO.Output("=======================================================================");
     }
 
@@ -179,6 +189,63 @@ public class GUI {
         ThreadLogger.INFO.Output(" 1.新建一个预设任务");
         ThreadLogger.INFO.Output(" 2.运行任务");
         ThreadLogger.INFO.Output(" 99.回到主菜单");
+        ThreadLogger.INFO.Output("=======================================================================");
+        ThreadLogger.NoLine.INFO.Scanner(" 请按照执行菜单输入命令：");
+    }
+
+    public static void AccountGUI() {
+        ThreadLogger.use.OutLine.NoHead();
+        ThreadLogger.INFO.Output("============================= 管理您的账户 ==============================");
+        ThreadLogger.INFO.Output("============================= 可选操作项目 ==============================");
+        ThreadLogger.INFO.Output(" 1.查看云存储信息");
+        ThreadLogger.INFO.Output(" 98.退出方块盒子账户");
+        ThreadLogger.INFO.Output(" 99.回到主菜单");
+        ThreadLogger.INFO.Output("=======================================================================");
+        ThreadLogger.NoLine.INFO.Scanner(" 请按照执行菜单输入命令：");
+    }
+
+    public static void CloudServiceGUI() throws IOException {
+        ThreadLogger.use.OutLine.NoHead();
+        ThreadLogger.INFO.Output("============================= 管理您的本地 ==============================");
+
+        String ServerList = VariableLibrary.Storage.ServerList();
+
+        if (!Objects.equals(ServerList, "{}")) {
+
+            ThreadLogger.INFO.Output(" 本地serverList信息：" + ServerList);
+
+        } else {
+            ThreadLogger.INFO.Output(" 本地存储为空");
+        }
+
+        ThreadLogger.INFO.Output("============================= 管理您的云存储 =============================");
+
+        String CloudData = net.fetch("https://service.cloud.arkpowered.cn/api/mcsm/save/get.php?username=" + VariableLibrary.Storage.UserName + "&usertoken=" + VariableLibrary.Storage.UserLoginToken);
+
+        JSONObject JSONCloudData = JSON.parseObject(CloudData);
+
+        String CloudDataINFO;
+
+        if (CloudData.equals("{}")) {
+            CloudDataINFO = "云端没有数据/数据为空值";
+        } else {
+            if (Objects.equals(JSONCloudData.get("status"), "1")) {
+                if (JSONCloudData.getString("cloudinfo").equals("{}")) {
+                    CloudDataINFO = "云端没有数据/数据为空值";
+                } else {
+                    CloudDataINFO = (String) JSONCloudData.get("cloudinfo");
+                }
+            } else {
+                CloudDataINFO = "云端没有数据/数据为空值";
+            }
+        }
+
+        ThreadLogger.INFO.Output(" 云端保存信息：" + CloudDataINFO);
+
+        ThreadLogger.INFO.Output("============================= 可选操作项目 ==============================");
+        ThreadLogger.INFO.Output(" 1.同步到云端");
+        ThreadLogger.INFO.Output(" 2.下载到本地");
+        ThreadLogger.INFO.Output(" 99.回到上一级菜单");
         ThreadLogger.INFO.Output("=======================================================================");
         ThreadLogger.NoLine.INFO.Scanner(" 请按照执行菜单输入命令：");
     }

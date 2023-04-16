@@ -1,11 +1,16 @@
 package cn.carlsky.nlr.mcsm.System;
 
+import cn.carlsky.nlr.lib.io;
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Properties;
 
 public class VariableLibrary {
     public static class System {
@@ -30,5 +35,14 @@ public class VariableLibrary {
 
 
         public static HashMap<Integer, String> randIDMap = new HashMap<Integer, String>();
+
+        public static String ServerList() throws IOException {
+            // 把已存在的 main.properties 读到 VariableLibrary 中
+            Properties MainSetting = new Properties();
+            InputStream PropertiesStream = io.Properties.GetStream("MCServerManager/Setting/main.properties");
+            MainSetting.load(PropertiesStream);
+
+            return MainSetting.getProperty("serverList");
+        }
     }
 }
