@@ -27,6 +27,21 @@ public class Initialization {
         String ServerList = MainSetting.getProperty("serverList");
         JSONObject SettingJSON = JSON.parseObject(ServerList);
 
+        if(MainSetting.getProperty("username") != ""){
+            JSONObject AccountCallBack = Ark.ArkAccountVerify(MainSetting.getProperty("username"), MainSetting.getProperty("usertoken"));
+            String Status = AccountCallBack.getString("Status");
+            if (Status.equals("OK")){
+
+                VariableLibrary.Storage.UserName = MainSetting.getProperty("username");
+                VariableLibrary.Storage.UserLoginToken = MainSetting.getProperty("usertoken");
+                VariableLibrary.Storage.UserLoginStatus = true;
+
+                ThreadLogger.INFO.Output(AccountCallBack.getString("msg"));
+            } else {
+                ThreadLogger.WARN.Output(AccountCallBack.getString("msg"));
+            }
+        }
+
         if (SettingJSON.get("serverList") != "{}") {
 
             String entryScanString = ServerList;
@@ -49,21 +64,6 @@ public class Initialization {
 
             }
 
-        }
-
-        if(MainSetting.getProperty("username") != ""){
-            JSONObject AccountCallBack = Ark.ArkAccountVerify(MainSetting.getProperty("username"), MainSetting.getProperty("usertoken"));
-            String Status = AccountCallBack.getString("Status");
-            if (Status.equals("OK")){
-
-                VariableLibrary.Storage.UserName = MainSetting.getProperty("username");
-                VariableLibrary.Storage.UserLoginToken = MainSetting.getProperty("usertoken");
-                VariableLibrary.Storage.UserLoginStatus = true;
-
-                ThreadLogger.INFO.Output(AccountCallBack.getString("msg"));
-            } else {
-                ThreadLogger.WARN.Output(AccountCallBack.getString("msg"));
-            }
         }
 
         // 检查更新

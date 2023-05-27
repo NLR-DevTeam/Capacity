@@ -1,5 +1,7 @@
 package cn.carlsky.nlr.lib;
 
+import cn.carlsky.nlr.mcsm.System.ThreadLogger;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -22,7 +24,8 @@ public class net {
             }
             in.close();
         } catch (Exception e) {
-            e.printStackTrace();
+            ThreadLogger.WARN.Output(" 网络连接已断开... 正在退出程序");
+            System.exit(0);
         }
         return json.toString();
     }
